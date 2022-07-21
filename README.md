@@ -13,4 +13,4 @@ project web crud untuk matrikulasi matakuliah teknologi rekayasa perangkat lunak
 - [ ] Isi database minimal 2 tiap tabel
 - [ ] Relasi tabel
 
-* id sudah pakai auto increment
+*id sudah pakai auto increment*
