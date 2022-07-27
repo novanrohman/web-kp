@@ -12,5 +12,5 @@ project web crud untuk matrikulasi matakuliah teknologi rekayasa perangkat lunak
 
 - [x] ERD
 - [ ] CRUD
+- [ ] UI/UX
 
-*id sudah pakai auto increment*
