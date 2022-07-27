@@ -10,7 +10,7 @@ project web crud untuk matrikulasi matakuliah teknologi rekayasa perangkat lunak
 
 ### Task
 
-- [x] Isi database minimal 2 tiap tabel
-- [x] Relasi tabel
+- [x] ERD
+- [ ] CRUD
 
 *id sudah pakai auto increment*
