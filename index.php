@@ -21,7 +21,7 @@ if (isset($_POST['submit'])){
     $_SESSION['id_role'] = $qry['id_role'];
     $_SESSION["last_login_time"] = time();
     if($row['id_role']=="1"){
-        header("location:template/dosen.php");
+        header("location:Custom/");
     }
     else if($row['id_role']=="2"){
         header("location:mahasiswa1.php");
