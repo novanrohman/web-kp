@@ -153,7 +153,7 @@
           </div>
         </li>
         <li class="nav-item">
-          <a class="nav-link" data-widget="logout" data-slide="true" href="#" role="button">
+          <a class="nav-link" data-widget="logout" data-slide="true" href="../logout.php" role="button">
             <span class="material-symbols-outlined">
               logout
             </span>
