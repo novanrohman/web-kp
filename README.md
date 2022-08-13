@@ -30,7 +30,6 @@ project web crud untuk matrikulasi matakuliah teknologi rekayasa perangkat lunak
 
 ### Ferdi
 - [ ] Daftar KP
-- [ ] 
 
 ### Aji
 - [ ] Surat Izin KP
