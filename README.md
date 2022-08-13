@@ -8,10 +8,18 @@ project web crud untuk matrikulasi matakuliah teknologi rekayasa perangkat lunak
 - Muhammad Aji Heramsyah
 - Novan Rohman Nur Khoir
 
-### Task
+### LIST TASK
 
-- [x] ERD
-- [ ] CRUD
+- [ ] Novan
+-- [ ]Login
+-- [ ]Register
+-- [ ]Data dosen
+-- [ ]Edit data dosen (Setting Profile)
+
+
+- [ ] Virgi
+-- [ ]Data Mahasiswa
+-- [ ]View bimbingan
 - [ ] UI/UX
 
 ### HOME
