@@ -28,6 +28,13 @@ project web crud untuk matrikulasi matakuliah teknologi rekayasa perangkat lunak
 - [ ] Edit Nilai
 - [ ] Hapus Nilai
 
-### 
+### Ferdi
+- [ ] Daftar KP
+- [ ] 
+
+### Aji
+- [ ] Surat Izin KP
+- [ ] Upload Surat Izin KP
+
 
 
