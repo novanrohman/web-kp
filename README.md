@@ -38,5 +38,7 @@ Project web crud untuk matrikulasi matakuliah teknologi rekayasa perangkat lunak
 - [ ] Surat Izin KP
 - [ ] Upload Surat Izin KP
 
+*Task bisa beubah sesuai kebutuhan
+
 
 
