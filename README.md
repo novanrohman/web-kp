@@ -1,5 +1,6 @@
-# web-kp
-project web crud untuk matrikulasi matakuliah teknologi rekayasa perangkat lunak
+# WEB KP
+---
+Project web crud untuk matrikulasi matakuliah teknologi rekayasa perangkat lunak
 
 ## Kelompok
 - Putri Indira
@@ -9,6 +10,8 @@ project web crud untuk matrikulasi matakuliah teknologi rekayasa perangkat lunak
 - Novan Rohman Nur Khoir
 
 ### LIST TASK
+
+---
 
 #### Novan
 - [ ] Login
