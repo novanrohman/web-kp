@@ -1,50 +1,92 @@
+<?php
+
+require_once("connection/db.php");
+
+if (isset($_POST['register'])) {
+
+        // filter data yang diinputkan
+        $name = filter_input(INPUT_POST, 'name', FILTER_SANITIZE_STRING);
+        $username = filter_input(INPUT_POST, 'username', FILTER_SANITIZE_STRING);
+        // enkripsi password
+        $password = password_hash($_POST["password"], PASSWORD_DEFAULT);
+        // $email = filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL);
+
+
+        // menyiapkan query
+        $sql = "INSERT INTO user (:,username, password) 
+            VALUES (:username, :password)";
+        $stmt = $db->prepare($sql);
+
+        // bind parameter ke query
+        $params = array(
+                ":username" => $username,
+                ":password" => $password,
+                // ":email" => $email
+        );
+
+        // eksekusi query untuk menyimpan ke database
+        $saved = $stmt->execute($params);
+
+        // jika query simpan berhasil, maka user sudah terdaftar
+        // maka alihkan ke halaman login
+        if ($saved) header("Location: index.php");
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Log in</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Register Pesbuk</title>
 
-  <link rel="shortcut icon" href="poliwangi.png">
-
-  <!-- Google Font: Source Sans Pro -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="AdminLTE-3.2.0/plugins/fontawesome-free/css/all.min.css">
-  <!-- icheck bootstrap -->
-  <link rel="stylesheet" href="AdminLTE-3.2.0/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
-  <!-- Theme style -->
-  <link rel="stylesheet" href="AdminLTE-3.2.0/dist/css/adminlte.min.css">
+        <link rel="stylesheet" href="css/bootstrap.min.css" />
 </head>
-<body class="hold-transition login-page">
 
-<?php
-require('../web-kp/connection/db.php');
+<body class="bg-light">
 
-$Level = 1;
-// If form submitted, insert values into the database.
-if (isset($_REQUEST['username'])){
-  $nik = ($_REQUEST['NIK']);
-        // removes backslashes
-	$username = stripslashes($_REQUEST['username']);
-        //escapes special characters in a string
-	$username = mysqli_real_escape_string($conn,$Username); 
-	$password = stripslashes($_REQUEST['password']);
-	$password = mysqli_real_escape_string($conn,$Password);
-	$nama = stripslashes($_REQUEST['nama']);
-	$nama = mysqli_real_escape_string($conn,$nama);
-        $query_user = "INSERT into `user` (id, username, password, id_role) 
-		VALUES ('', '$nama', '$Username', md5('$Password'), '$Level')";
-        $query_dosen = "INSERT INTO `dosen` (id, nama_dosen, nik, user_id) VALUES ('', '$Nama', '$nik', '')";
-        $result = mysqli_query($conn,$query);
-        if($result){
-            echo "<div class='form'>
-<h3>Registrasi Berhasil.</h3>
-<br/>Klik disini untuk <a href='login.php'>Login</a></div>";
-        }
-    }else{
-      require_once 'View/regist.php';
-} 
-?>
+        <div class="container mt-5">
+                <div class="row">
+                        <div class="col-md-6">
+
+                                <p>&larr; <a href="index.php">Home</a>
+
+                                <h4>Bergabunglah bersama ribuan orang lainnya...</h4>
+                                <p>Sudah punya akun? <a href="login.php">Login di sini</a></p>
+
+                                <form action="" method="POST">
+
+                                        <div class="form-group">
+                                                <label for="name">Nama Lengkap</label>
+                                                <input class="form-control" type="text" name="name" placeholder="Nama kamu" />
+                                        </div>
+
+                                        <div class="form-group">
+                                                <label for="username">Username</label>
+                                                <input class="form-control" type="text" name="username" placeholder="Username" />
+                                        </div>
+
+                                        <div class="form-group">
+                                                <label for="password">Password</label>
+                                                <input class="form-control" type="password" name="password" placeholder="Password" />
+                                        </div>
+
+                                        <input type="submit" class="btn btn-success btn-block" name="register" value="Daftar" />
+
+                                </form>
+
+                        </div>
+
+                        <div class="col-md-6">
+                                <img class="img img-responsive" src="img/connect.png" />
+                        </div>
+
+                </div>
+        </div>
+
 </body>
+
 </html>
