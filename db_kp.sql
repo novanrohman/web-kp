@@ -215,7 +215,8 @@ CREATE TABLE `user` (
 /*Data for the table `user` */
 
 insert  into `user`(`id`,`username`,`password`,`id_role`) values 
-(123,'123abc','123abc',12);
+(1,'poliwangi','202cb962ac59075b964b07152d234b70',1),
+(2,'321','202cb962ac59075b964b07152d234b70',2);
 
 /*Table structure for table `user_role` */
 

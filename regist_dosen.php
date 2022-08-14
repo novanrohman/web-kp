@@ -31,13 +31,11 @@ if (isset($_REQUEST['username'])){
 	$username = mysqli_real_escape_string($conn,$Username); 
 	$password = stripslashes($_REQUEST['password']);
 	$password = mysqli_real_escape_string($conn,$Password);
-	$level = stripslashes($_REQUEST['level']);
-	$level = mysqli_real_escape_string($conn,$Level);
 	$nama = stripslashes($_REQUEST['nama']);
 	$nama = mysqli_real_escape_string($conn,$nama);
-        $query_user = "INSERT into `user` (id, username, password, level) 
+        $query_user = "INSERT into `user` (id, username, password, id_role) 
 		VALUES ('', '$nama', '$Username', md5('$Password'), '$Level')";
-        $query_dosen = "INSERT INTO `dosen` (id, nama_dosen, nik, user_id VALUES ('', '$Nama', '$nik', '')";
+        $query_dosen = "INSERT INTO `dosen` (id, nama_dosen, nik, user_id) VALUES ('', '$Nama', '$nik', '')";
         $result = mysqli_query($conn,$query);
         if($result){
             echo "<div class='form'>
