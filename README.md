@@ -1,5 +1,6 @@
-# web-kp
-project web crud untuk matrikulasi matakuliah teknologi rekayasa perangkat lunak
+# WEB KP
+---
+Project web crud untuk matrikulasi matakuliah teknologi rekayasa perangkat lunak
 
 ## Kelompok
 - Putri Indira
@@ -8,12 +9,37 @@ project web crud untuk matrikulasi matakuliah teknologi rekayasa perangkat lunak
 - Muhammad Aji Heramsyah
 - Novan Rohman Nur Khoir
 
-### Task
+### LIST TASK
 
-- [x] ERD
-- [ ] CRUD
-- [ ] UI/UX
+---
 
-### HOME
+#### Novan
+- [ ] Login
+- [ ] Register
+- [ ] Data dosen
+- [ ] Edit data dosen (Setting Profile)
+
+
+#### Virgi
+- [ ] Register Mahasiswa
+- [ ] Data Mahasiswa
+- [ ] Status Bimbingan
+- [ ] Hapus Data Mahasiswa
+- [ ] Edit Data (Jadwal, Status, dll...)
+
+#### Putri
+- [ ] Unggah Nilai
+- [ ] Edit Nilai
+- [ ] Hapus Nilai
+
+#### Ferdi
+- [ ] Daftar KP
+
+#### Aji
+- [ ] Surat Izin KP
+- [ ] Upload Surat Izin KP
+
+*Task bisa beubah sesuai kebutuhan
+
 
 
