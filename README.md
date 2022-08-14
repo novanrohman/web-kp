@@ -21,6 +21,7 @@ Project web crud untuk matrikulasi matakuliah teknologi rekayasa perangkat lunak
 
 
 #### Virgi
+- [ ] Register Mahasiswa
 - [ ] Data Mahasiswa
 - [ ] Status Bimbingan
 - [ ] Hapus Data Mahasiswa
