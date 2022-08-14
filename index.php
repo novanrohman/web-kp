@@ -100,7 +100,7 @@ if (isset($_POST['submit'])){
         <a href="forgot-password.html">I forgot my password</a>
       </p>
       <p class="mb-0">
-        <a href="register.html" class="text-center">Register</a>
+        <a href="View/regist_dosen.php" class="text-center">Register</a>
       </p>
     </div>
     <!-- /.login-card-body -->
