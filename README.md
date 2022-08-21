@@ -41,5 +41,13 @@ Project web crud untuk matrikulasi matakuliah teknologi rekayasa perangkat lunak
 
 *Task bisa beubah sesuai kebutuhan
 
+# Documentation
+
+## Id role
+1 = dosen
+2 = mahasiswa
+3 = admin
+
+
 
 
