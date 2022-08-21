@@ -14,7 +14,7 @@ Project web crud untuk matrikulasi matakuliah teknologi rekayasa perangkat lunak
 ---
 
 #### Novan
-- [ ] Login
+- [x] Login
 - [ ] Register
 - [ ] Data dosen
 - [ ] Edit data dosen (Setting Profile)
