@@ -14,7 +14,7 @@ Project web crud untuk matrikulasi matakuliah teknologi rekayasa perangkat lunak
 ---
 
 #### Novan
-- [ ] Login
+- [x] Login
 - [ ] Register
 - [ ] Data dosen
 - [ ] Edit data dosen (Setting Profile)
@@ -40,6 +40,14 @@ Project web crud untuk matrikulasi matakuliah teknologi rekayasa perangkat lunak
 - [ ] Upload Surat Izin KP
 
 *Task bisa beubah sesuai kebutuhan
+
+# Documentation
+
+## Id role
+1 = dosen
+2 = mahasiswa
+3 = admin
+
 
 
 
