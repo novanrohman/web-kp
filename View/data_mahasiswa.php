@@ -1,8 +1,8 @@
-<?php
+<!-- <?php
 
 // Fetch all users data from database
-$result = mysqli_query($conn, "SELECT * FROM mahasiswa ORDER BY id DESC");
-?>
+//$result = mysqli_query($conn, "SELECT * FROM mahasiswa ORDER BY id DESC");
+?> -->
 
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
@@ -58,14 +58,17 @@ $result = mysqli_query($conn, "SELECT * FROM mahasiswa ORDER BY id DESC");
                                 </thead>
                                 <tbody>
                                     <?php  
-    while($user_data = mysqli_fetch_array($result)) {         
+    // while($user_data = mysqli_fetch_array($result)) {   
+      $no = 1;
+      foreach($db->tampil_data() as $user_data){
+              
         echo "<tr>";
-        echo "<td>".$user_data['id']."</td>";
+        echo "<td>".$no++."</td>";
         echo "<td>".$user_data['nama_mahasiswa']."</td>";
         echo "<td>".$user_data['nim']."</td>";    
         echo "<td>".$user_data['kelas']."</td>";    
-        echo "<td>".$user_data['alamat']."</td>";    
-        echo "<td>".$user_data['user_id']."</td>";    
+        echo "<td>".$user_data['alamat']."</td>";
+        echo "<td>".$user_data['email']."</td>";        
         echo "<td>".$user_data['anggota_kelompok_id']."</td>";    
         echo "<td><button type='button' class='btn btn-outline-primary'>
         <span class='material-symbols-outlined'>Edit</span>
@@ -74,6 +77,7 @@ $result = mysqli_query($conn, "SELECT * FROM mahasiswa ORDER BY id DESC");
     </button>
   </td></tr>";        
     }
+    // }
     ?>
 
 
