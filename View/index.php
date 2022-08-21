@@ -1,20 +1,28 @@
-<?php 
+// <?php
  
-session_start();
+// session_start();
  
-if (!isset($_SESSION['username'])) {
-    header("Location: ../index.php");
-}
+// if (!isset($_SESSION['username'])) {
+    // header("Location: ../index.php");
+// }
  
+//?>
+<?=
+require_once("../connection/db.php");
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
+
+
 
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>AdminLTE 3 | Dashboard 2</title>
+
+   <!-- link yang sambung ke crud tambah.php -->
+   <!-- <a href="tambah.php">+ TAMBAH DOSEN</a> -->
+
 
   <link rel="shortcut icon" href="../poliwangi.png">
   <script src="https://kit.fontawesome.com/bdf66ddc22.js" crossorigin="anonymous"></script>
@@ -36,10 +44,10 @@ if (!isset($_SESSION['username'])) {
   <div class="wrapper">
 
     <!-- Preloader -->
-    <div class="preloader flex-column justify-content-center align-items-center">
+    <!-- <div class="preloader flex-column justify-content-center align-items-center">
       <img class="animation__wobble" src="../AdminLTE-3.2.0/dist/img/AdminLTELogo.png" alt="AdminLTELogo" height="60"
         width="60">
-    </div>
+    </div> -->
 
     <!-- Navbar -->
     <nav class="main-header navbar navbar-expand navbar-dark">
