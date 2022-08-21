@@ -1,13 +1,13 @@
 /*
 SQLyog Ultimate v13.1.1 (64 bit)
-MySQL - 5.7.33 : Database - db_kp
+MySQL - 10.4.6-MariaDB : Database - db_kp
 *********************************************************************
 */
 
 /*!40101 SET NAMES utf8 */;
 
 /*!40101 SET SQL_MODE=''*/;
-git 
+
 /*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
@@ -26,16 +26,9 @@ CREATE TABLE `acc_ujian` (
   `jadwal_ujian` varchar(45) NOT NULL,
   `acc_ujian` varchar(45) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7006 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 /*Data for the table `acc_ujian` */
-
-insert  into `acc_ujian`(`id`,`dosen_penguji`,`jadwal_ujian`,`acc_ujian`) values 
-(7001,'Sepyan Purnama Kristanto, S.Kom.,M.Kom','September','A'),
-(7002,'Moh. Dimyati Ayatullah, S..T., M.Kom','September','B'),
-(7003,'Dianni Yusuf, S.Kom, M.Kom','September','A'),
-(7004,'Eka Mistiko Rini, S.Kom, M.kom','September','B'),
-(7005,'Devit Suwardiyanto, S.Si., M.T','September','A');
 
 /*Table structure for table `anggota_kelompok` */
 
@@ -46,16 +39,9 @@ CREATE TABLE `anggota_kelompok` (
   `nama_anggota` varchar(45) NOT NULL,
   `nim` varchar(45) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7006 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 /*Data for the table `anggota_kelompok` */
-
-insert  into `anggota_kelompok`(`id`,`nama_anggota`,`nim`) values 
-(7001,'Novan Rohman Nur Khoir ','362155401135'),
-(7002,'Putri Indira Puspitasari','362155401138'),
-(7003,'Muh. Ilham Syafaat Dava Ferdyansyah','362155401142'),
-(7004,'Virgianita Ramadhani Susilo Putri','362155401143'),
-(7005,'Mohamad Aji Hermansya','362155401145');
 
 /*Table structure for table `dosen` */
 
@@ -67,15 +53,9 @@ CREATE TABLE `dosen` (
   `nik` varchar(45) NOT NULL,
   `user_id` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=54005 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 /*Data for the table `dosen` */
-
-insert  into `dosen`(`id`,`nama_dosen`,`nik`,`user_id`) values 
-(54001,'Devit Suwardiyanto, S.Si., M.T','1',201),
-(54002,'Sepyan Purnama Kristanto, S.Kom.,M.Kom ','2',202),
-(54003,'Moh. Dimyati Ayatullah, S.T., M.Kom','3',203),
-(54004,'Dianni Yusuf, S.Kom, M.Kom','4',204);
 
 /*Table structure for table `lembar_kerja` */
 
@@ -87,16 +67,9 @@ CREATE TABLE `lembar_kerja` (
   `file` varchar(45) NOT NULL,
   `anggota_kelompok_id` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5006 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 /*Data for the table `lembar_kerja` */
-
-insert  into `lembar_kerja`(`id`,`tanggal`,`file`,`anggota_kelompok_id`) values 
-(5001,'2022-08-11 02:42:28','pdf',7001),
-(5002,'2022-08-11 02:42:53','pdf',7002),
-(5003,'2022-08-13 02:43:11','pdf',7003),
-(5004,'2022-08-13 02:43:36','pdf',7004),
-(5005,'2022-08-15 02:43:59','pdf',7005);
 
 /*Table structure for table `mahasiswa` */
 
@@ -111,15 +84,9 @@ CREATE TABLE `mahasiswa` (
   `user_id` int(11) NOT NULL,
   `anggota_kelompok_id` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3705 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 /*Data for the table `mahasiswa` */
-
-insert  into `mahasiswa`(`id`,`nama_mahasiswa`,`nim`,`kelas`,`alamat`,`user_id`,`anggota_kelompok_id`) values 
-(3701,'Novan Rohman Nur Khoir','362155401135','1E','Bagorejo',201,7001),
-(3702,'Putri Indira Puspitasari','362155401138','1E','Sukowidi',202,7002),
-(3703,'Muh. Ilham Syafaat Dava Ferdyansyah','362155401142','1E','Songgon',203,7003),
-(3704,'Virgianita Ramadhani Susilo Putri','362155401143','1E','Wonosobo',204,7004);
 
 /*Table structure for table `nilai` */
 
@@ -133,16 +100,9 @@ CREATE TABLE `nilai` (
   `bukti_nilai_pembimbing_lapangan` varchar(45) NOT NULL,
   `pendaftaran_ujian_kp_id` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5006 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 /*Data for the table `nilai` */
-
-insert  into `nilai`(`id`,`nilai_pembimbing_lapangan`,`nilai_pembimbing_kp`,`nilai_penguji`,`bukti_nilai_pembimbing_lapangan`,`pendaftaran_ujian_kp_id`) values 
-(5001,'-AB','B','B','Penelitian data lapangan',1),
-(5002,'-B','A','B','Penelitian data lapangan',2),
-(5003,'-A','-AB','-AB','Penelitian data lapangan',3),
-(5004,'-A','-AB','-AB','Penelitian data lapangan',4),
-(5005,'A','B','AB','Penelitian data lapangan',5);
 
 /*Table structure for table `pendaftaran_kp` */
 
@@ -159,13 +119,9 @@ CREATE TABLE `pendaftaran_kp` (
   `dosen_id` int(11) NOT NULL,
   `perusahaan_id` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=303 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 /*Data for the table `pendaftaran_kp` */
-
-insert  into `pendaftaran_kp`(`id`,`tempat_kp`,`alamat_kp`,`tanggal_mulai`,`tanggal_selesai`,`proposal`,`anggota_kelompok`,`dosen_id`,`perusahaan_id`) values 
-(301,'Ikea','surabaya','2022-08-11 10:46:17','2022-08-31 10:46:23','grovee',4,54005,701),
-(302,'ikea','surabaya','2022-08-11 12:00:27','2022-08-31 12:00:31','grovee',5,7001,702);
 
 /*Table structure for table `pendaftaran_ujian_kp` */
 
@@ -193,12 +149,9 @@ CREATE TABLE `perusahaan` (
   `email` varchar(45) NOT NULL,
   `telephone` varchar(45) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4702 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 /*Data for the table `perusahaan` */
-
-insert  into `perusahaan`(`id`,`nama_perusahaan`,`alamat`,`email`,`telephone`) values 
-(4701,'ikea','surabaya','ikea@gmail.com','08233457264');
 
 /*Table structure for table `user` */
 
@@ -210,13 +163,9 @@ CREATE TABLE `user` (
   `password` varchar(45) NOT NULL,
   `id_role` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=124 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 /*Data for the table `user` */
-
-insert  into `user`(`id`,`username`,`password`,`id_role`) values 
-(1,'poliwangi','202cb962ac59075b964b07152d234b70',1),
-(2,'321','202cb962ac59075b964b07152d234b70',2);
 
 /*Table structure for table `user_role` */
 
