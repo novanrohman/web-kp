@@ -18,7 +18,8 @@ if (isset($_POST['submit'])){
   if($result->num_rows > 0){
     $row = mysqli_fetch_assoc($result);
     $_SESSION['username'] = $row['username'];
-    $_SESSION['id_role'] = $qry['id_role'];
+    $_SESSION['id_role'] = $row['id_role'];
+    $_SESSION['id'] = $row['id'];
     $_SESSION["last_login_time"] = time();
     if($row['id_role']=="1"){
         header("location:View/index.php");

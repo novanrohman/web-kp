@@ -1,3 +1,11 @@
+<?php
+include '../connection/db.php';
+
+$id = $_SESSION['id'];
+$sql = "SELECT * FROM dosen WHERE user_id = '$id'";
+$result = mysqli_query($conn, $sql);
+while ($data = mysqli_fetch_array($result)){
+?>
 <div class="content-wrapper">
   <!-- Content Header (Page header) -->
   <section class="content">
@@ -8,21 +16,27 @@
               <div class="card-body">
               <form class="form-horizontal" action="post">
                       <div class="form-group row">
+                        <label for="inputName" class="col-sm-2 col-form-label">ID</label>
+                        <div class="col-sm-10">
+                          <input type="email" class="form-control" id="inputName" value="<?php echo $id?>">
+                        </div>
+                      </div>
+                      <div class="form-group row">
                         <label for="inputName" class="col-sm-2 col-form-label">Username</label>
                         <div class="col-sm-10">
-                          <input type="email" class="form-control" id="inputName" placeholder="<?php echo $_SESSION['username']; ?>">
+                          <input type="email" class="form-control" id="inputName" value="<?php echo $_SESSION['username']; ?>">
                         </div>
                       </div>
                       <div class="form-group row">
                         <label for="inputEmail" class="col-sm-2 col-form-label">Nama</label>
                         <div class="col-sm-10">
-                          <input type="text" class="form-control" id="inputEmail" placeholder="Nama">
+                          <input type="text" class="form-control" id="inputEmail" placeholder="Nama" value="<?php echo $data['nama_dosen']?>">
                         </div>
                       </div>
                       <div class="form-group row">
                         <label for="inputName2" class="col-sm-2 col-form-label">NIK</label>
                         <div class="col-sm-10">
-                          <input type="text" class="form-control" id="inputName2" placeholder="NIK">
+                          <input type="text" class="form-control" id="inputName2" placeholder="NIK" value="<?php echo $data['nik']?>">
                         </div>
                       </div>
                       <div class="form-group row">
@@ -48,7 +62,7 @@
                       </div>
                       <div class="form-group row">
                         <div class="offset-sm-2 col-sm-10">
-                          <button type="submit" class="btn btn-danger">Submit</button>
+                          <button type="submit" class="btn btn-danger">Update</button>
                         </div>
                       </div>
                     </form>
@@ -64,3 +78,6 @@
     </div>
   </section>
 </div>
+<?php 
+}
+ ?>
