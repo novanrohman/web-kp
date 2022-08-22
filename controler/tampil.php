@@ -6,7 +6,7 @@ $db = new database();
 <h3> Data mahasiswa</h3>
 
 <a href="input.php">Input Data</a>
-<table border="1>
+<table border="1">
 <tr> 
 <th>No.</th>
             <th>ID</th>
