@@ -23,7 +23,7 @@ $db = new database();
 <?php
  $no = 1;
  foreach($db->tampil_data() as $user_data){
- ?>  
+  
    echo " <tr>";
     echo "<td>".$no++."</td>";
     echo "<td>".$user_data['nama_mahasiswa']."</td>";
@@ -32,7 +32,7 @@ $db = new database();
     echo "<td>".$user_data['alamat']."</td>";
     // echo "<td>".$user_data['email']."</td>";
     echo "<td>".$user_data['anggota_kelompok_id']."</td>";
-
+?>
     <td>
         <a href="edit.php?id=<?php echo $user_data['id']; ?>&aksi=update">Edit</a>
         <a href="proses.php?id=<?php echo $user_data['id']; ?>&aksi=hapus"
