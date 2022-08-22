@@ -68,7 +68,7 @@
         echo "<td>".$user_data['nim']."</td>";    
         echo "<td>".$user_data['kelas']."</td>";    
         echo "<td>".$user_data['alamat']."</td>";
-        echo "<td>".$user_data['email']."</td>";        
+        // echo "<td>".$user_data['email']."</td>";        
         echo "<td>".$user_data['anggota_kelompok_id']."</td>";    
         echo "<td><button type='button' class='btn btn-outline-primary'>
         <span class='material-symbols-outlined'>Edit</span>
