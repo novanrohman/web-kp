@@ -27,6 +27,7 @@ $db = new database();
    echo " <tr>";
     echo "<td>".$no++."</td>";
     echo "<td>".$user_data['nama_mahasiswa']."</td>";
+    var_dump($user_data['nama_mahasiswa']);
     echo "<td>".$user_data['nim']."</td>";
     echo "<td>".$user_data['kelas']."</td>";
     echo "<td>".$user_data['alamat']."</td>";
@@ -41,5 +42,6 @@ $db = new database();
     </tr>
 <?php
  }
-// </table>
+ ?>
+</table>
  
