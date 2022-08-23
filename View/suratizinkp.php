@@ -1,4 +1,23 @@
 <!-- /.row -->
+<?php
+require "fungsi.php";
+if (isset($_POST["submit"])){
+  if (surat_ijin($_POST)>0){
+    echo "<script>
+        alert ('data berhasil ditambah');
+        document.location .href = 'kp.php'
+    </script>" ;
+    
+}
+else {
+    echo "<script>
+        alert ('data gagal ditambahkan');
+        document.location.href = 'kp.php'
+    </script>";
+}
+}
+?>
+<form action="" method="post" enctype="multipart/form-data">
  <div class="row">
           <div class="col-md-12">
             <div class="card card-default">
@@ -10,7 +29,7 @@
                   <div class="col-lg-3">
                     <div class="btn-group w-100">
                       <!-- <input type="file" class="file-input" name="file" id="file"> -->
-                      <input type="file" class="btn btn-primary col start" style="text-decoration: display:none;">
+                      <input type="file" class="btn btn-primary col start" name="file">
                         <!-- <i class="fas fa-upload"></i> -->
                         <!-- <span>Start upload</span> -->
                       </input>
@@ -24,13 +43,13 @@
                       </div>
                     </div>
                   </div>
-                  <button data-dz-remove class="btn btn-warning cancel mr-1">
-                        <i class="fas fa-times-circle"></i>
-                        <span>Cancel</span>
-                      </button>
-                      <button data-dz-remove class="btn btn-danger delete">
+                      <button data-dz-remove class="btn btn-danger delete mr-1" name="">
                         <i class="fas fa-trash"></i>
                         <span>Delete</span>
+                      </button>
+                      <button data-dz-remove class="btn btn-warning cancel " name="submit">
+                        <i class="fas fa fa-send"></i>
+                        <span>Send</span>
                       </button>
                 </div>
                 
@@ -54,4 +73,5 @@
                   </div>
                 </div>
               </div>
-              <!-- /.card-body -->
+             
+</form>
