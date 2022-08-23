@@ -73,5 +73,39 @@ else {
                   </div>
                 </div>
               </div>
-             
+
+              <div class="col-md-12">
+            <div class="card card-default">
+              <div class="card-header">
+                <h3 class="card-title">Tanggal <small><em> Upload</em> file</small></h3>
+              </div>
+              <div class="card-body">
+                <div id="actions" class="row">
+                  <div class="col-lg-3">
+                    <div class="btn-group w-100">
+                      <!-- <input type="file" class="file-input" name="file" id="file"> -->
+                      <input type="date" class="btn btn-primary col start" name="file">
+                        <!-- <i class="fas fa-upload"></i> -->
+                        <!-- <span>Start upload</span> -->
+                      </input>
+                    </div>
+                  </div>
+
+                  <div class="col-md-12">
+            <div class="card card-default">
+              <div class="card-header">
+                <h3 class="card-title">ID <small><em> Anggota</em> kelompok</small></h3>
+              </div>
+              <div class="card-body">
+                <div id="actions" class="row">
+                  <div class="col-lg-3">
+                    <div class="btn-group w-100">
+                      <!-- <input type="file" class="file-input" name="file" id="file"> -->
+                      <input type="date" class="btn btn-primary col start" name="file">
+                        <!-- <i class="fas fa-upload"></i> -->
+                        <!-- <span>Start upload</span> -->
+                      </input>
+                    </div>
+                  </div>
+                  
 </form>

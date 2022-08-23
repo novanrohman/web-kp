@@ -15,7 +15,7 @@ function surat_ijin($data){
     if(!$proposal){
         return false;
     }
-    $query = "INSERT INTO tabel_baru VALUES ('','$proposal')";
+    $query = "INSERT INTO lembar_kerja VALUES ('', 'tanggal','$proposal', 'anggota_kelompok_id')";
     mysqli_query($conn,$query);
     return mysqli_affected_rows($conn);
 }
