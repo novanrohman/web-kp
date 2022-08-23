@@ -200,7 +200,7 @@ $db = new database();
               <img src="../AdminLTE-3.2.0/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
             </div>
             <div class="info">
-              <a href="index.php?page=profile_dosen" class="d-block"><?php echo $_SESSION['username']; ?></a>
+              <a href="kp.php?page=pendaftarankp" class="d-block"><?php echo $_SESSION['username']; ?></a>
             </div>
           </div>
   
@@ -210,8 +210,8 @@ $db = new database();
               <li class="nav-header">MENU</li>
               <!-- Add icons to the links using the .nav-icon class
                  with font-awesome or any other icon font library -->
-              <li class="nav-item menu-open">
-                <a href="index.php?page=dashboard" class="nav-link active">
+              <!-- <li class="nav-item menu-open">
+                <a href="kp.php?page=dashboard" class="nav-link active">
                   <i class="nav-icon fas fa-tachometer-alt"></i>
                   <p>
                     Dashboard
@@ -219,7 +219,7 @@ $db = new database();
                 </a>
               </li>
               <li class="nav-item">
-                <a href="index.php?page=data_mahasiswa" class="nav-link">
+                <a href="kp.php?page=data_mahasiswa" class="nav-link">
                   <i class="nav-icon fas fa-table"></i>
                   <p>
                     Data Mahasiswa
@@ -227,19 +227,19 @@ $db = new database();
                 </a>
               </li>
               <li class="nav-item">
-                <a href="index.php?page=unggah_nilai" class="nav-link">
+                <a href="kp.php?page=unggah_nilai" class="nav-link">
                   <i class="nav-icon fas fa-edit"></i>
                   <p>
                     Unggah Nilai
                   </p>
-                </a>
-             <!-- <li class="nav-item">
-                <a href="index.php?page=pendaftarankp" class="nav-link">
+                </a> -->
+             <li class="nav-item">
+                <a href="kp.php?page=pendaftarankp" class="nav-link">
                   <i class="nav-icon fas fa-edit"></i>
                   <p>
                     Pendaftaran KP
                   </p>
-                </a> -->
+                </a>
               </li>
             </ul>
           </nav>
@@ -255,32 +255,17 @@ $db = new database();
 
 
           switch ($page) {
-            case 'dashbhoard':
-            include "dashboard_dosen.php";
-            break;
 
-            case 'data_mahasiswa':
-            include "data_mahasiswa.php";
-            break;
-
-            case 'unggah_nilai':
-            include "unggah_nilai.php";
-            break;
-
-            case 'profile_dosen':
-            include "profile_dosen.php";
-            break;
-
-            // case 'pendaftarankp':
-            //   include "pendaftarankp.php";
-            //   break;
+            case 'pendaftarankp':
+              include "pendaftarankp.php";
+              break;
 
             default:
-            include "dashboard_dosen.php";
+            include "pendaftarankp.php";
             break;
           }
         } else {
-          include "dashboard_dosen.php";
+          include "pendaftarankp.php";
         }
         ?>
       <!-- ./Main -->
