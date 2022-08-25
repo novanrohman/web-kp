@@ -8,14 +8,15 @@ $db = new database();
 <a href="input.php">Input Data</a>
 <table border="1">
 <tr> 
-<th>No.</th>
-            <th>ID</th>
+            <th>No.</th>
+            <th>ID</th> 
             <th>Nama Mahasiswa</th>
             <th>NIM</th>
             <th>Kelas</th>
             <th>Alamat</th>
-            <th>Email</th>
+            <th>Email</th> 
             <th>Anggota Kelompok</th>
+            <th>Edit</th>
 
 </tr>
 
@@ -30,8 +31,9 @@ $db = new database();
     var_dump($user_data['nama_mahasiswa']);
     echo "<td>".$user_data['nim']."</td>";
     echo "<td>".$user_data['kelas']."</td>";
+    echo "<td>".$user_data['email']."</td>";
     echo "<td>".$user_data['alamat']."</td>";
-    // echo "<td>".$user_data['email']."</td>";
+    echo "<td>".$user_data['user_id']."</td>";
     echo "<td>".$user_data['anggota_kelompok_id']."</td>";
 ?>
     <td>

@@ -44,12 +44,14 @@
                         <!-- /.card-header -->
                         <div class="card-body table-responsive p-0">
                             <table class="table table-hover text-nowrap">
+                            <table class="table table-hover text-center">
                                 <thead>
                                     <tr>
                                         <th>ID</th>
                                         <th>Nama</th>
                                         <th>NIM</th>
                                         <th>Kelas</th>
+                                        <th>Email</th>
                                         <th>Alamat</th>
                                         <th>User Id</th>
                                         <th>Anggota Kelompok</th>
@@ -63,12 +65,13 @@
       foreach($db->tampil_data() as $user_data){
               
         echo "<tr>";
-        echo "<td>".$no++."</td>";
+        echo "<td>".$no++."</td>";    
         echo "<td>".$user_data['nama_mahasiswa']."</td>";
         echo "<td>".$user_data['nim']."</td>";    
-        echo "<td>".$user_data['kelas']."</td>";    
+        echo "<td>".$user_data['kelas']."</td>"; 
+        echo "<td>".$user_data['email']."</td>";   
         echo "<td>".$user_data['alamat']."</td>";
-        // echo "<td>".$user_data['email']."</td>";        
+        echo "<td>".$user_data['user_id']."</td>";        
         echo "<td>".$user_data['anggota_kelompok_id']."</td>";    
         echo "<td><button type='button' class='btn btn-outline-primary'>
         <span class='material-symbols-outlined'>Edit</span>

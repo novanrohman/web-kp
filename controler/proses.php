@@ -6,12 +6,14 @@ $aksi = $_GET['aksi'];
 
 if($aksi == "tambah"){
     $db->filter_input
-    ($_POST['nama_mahasiswa'],
+    ($_POST['id'],
+    $_POST['nama_mahasiswa'],
     $_POST['nim'],
     $_POST['kelas'],
-    $_POST['alamat'],
     $_POST['email'],
-    $_POST['anggota_kelompok']);
+    $_POST['alamat'],
+    $_POST['user_id'],
+    $_POST['anggota_kelompok_id']);
 }
 
 elseif($aksi == "hapus"){
@@ -25,9 +27,10 @@ elseif($aksi == "update"){
     $_POST['nama_mahasiswa'],
     $_POST['nim'],
     $_POST['kelas'],
-    $_POST['alamat'],
     $_POST['email'],
-    $_POST['anggota_kelompok']);
+    $_POST['alamat'],
+    $_POST['user_id'],
+    $_POST['anggota_kelompok_id']);
     header("location:tampil.php");
 }
 ?>

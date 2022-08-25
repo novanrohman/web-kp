@@ -1,4 +1,4 @@
-<?php
+<!-- <?php
 include 'koneksi.php';
 
 class database extends koneksi{
@@ -16,5 +16,20 @@ class database extends koneksi{
         }
         return $hasil;
     }
-}
-?>
+
+    function input($id,$nama,$nim,$kelas,$email,$alamat,$user_id,$anggota_kelompok){
+        mysqli_query($this->koneksi, "INSERT INTO mahasiswa VALUES(' ', '$nama', '$nim', '$kelas', '$email', '$alamat', $user_id', '$anggota_kelompok_id')");
+    }
+
+    function hapus($id,$nama,$nim,$kelas,$email,$alamat,$user_id,$anggota_kelompok){
+        mysqli_query($this->koneksi, "DELETE FROM mahasiswa VALUES(' ', '$nama', '$nim', '$kelas', '$email', '$alamat', $user_id', '$anggota_kelompok_id')");
+    }
+
+    function edit($id){
+         mysqli_query($this->koneksi, "SELECT * FROM mahasiswa VALUES(' ', '$nama', '$nim', '$kelas', '$email', '$alamat', $user_id', '$anggota_kelompok_id')");
+        while($d = mysqli_fetch_array($data)){
+        }
+         return $hasil->db_kp->get()->row();
+    }
+ }
+?> -->
