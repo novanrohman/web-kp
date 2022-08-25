@@ -1,21 +1,20 @@
 <?php
 require 'fungsi.php';
 
-if (isset($_POST["submit"])) 
-$id = $_GET["file"]; {
-    if (delete($proposal)>0){
+$id = $_GET["id"]; 
+
+if (hapus($id) > 0 ) {
         echo "<script>
-            alert ('data berhasil dihapus');
+            alert ('data berhasil dihapus!');
             document.location .href = 'kp.php'
         </script>" ;
         
-    }
-    else {
+    } else {
         echo "<script>
-            alert ('data gagal dihapus');
+            alert ('data gagal dihapus!');
             document.location.href = 'kp.php'
         </script>";
     }
-}
+
 
 ?>

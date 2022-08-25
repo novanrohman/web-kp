@@ -122,7 +122,7 @@
               <!-- Message End -->
             </a>
             <div class="dropdown-divider"></div>
-            <a href="#" class="dropdown-item dropdown-footer">See All Messages</a>
+            <a href="#" class="dropdown-item dropdown-footer">See All Messages</a>  
           </div>
         </li>
         <!-- Notifications Dropdown Menu -->
@@ -191,13 +191,15 @@
               <!-- Add icons to the links using the .nav-icon class
                  with font-awesome or any other icon font library -->
               <li class="nav-item menu-open">
-                <a href="kp.php?page=dashboard" class="nav-link active">
+                <a href="kp.php?page=tampilan" class="nav-link active">
+               
                   <i class="nav-icon fas fa-tachometer-alt"></i>
                   <p>
                     Dashboard
                   </p>
                 </a>
               </li>
+              
               <li class="nav-item">
                 <a href="kp.php?page=data_mahasiswa" class="nav-link">
                   <i class="nav-icon fas fa-table"></i>
@@ -254,8 +256,8 @@
 
 
           switch ($page) {
-            case 'dashbhoard':
-            include "404.php";
+            case 'tampilan':
+            include "tampilan.php";
             break;
 
             case 'data_mahasiswa':
@@ -264,6 +266,10 @@
 
             case 'unggah_nilai':
             include "unggah_nilai.php";
+            break;
+
+            case 'ubah':
+            include "ubah.php";
             break;
             
             case 'suratizinkp':

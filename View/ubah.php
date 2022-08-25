@@ -1,18 +1,27 @@
 <!-- /.row -->
 <?php
+
 require "fungsi.php";
+//ambil data di url
+$id = $_GET["id"];
+
+$mha = query("SELECT * FROM lembar_kerja WHERE id = $id")[0];
+
+
+
+
 if (isset($_POST["submit"])){
     
-  if (surat_ijin($_POST)>0){
+  if (ubah($_POST)>0){
     echo "<script>
-        alert ('data berhasil ditambah');
+        alert ('data berhasil diubah!');
         document.location .href = 'kp.php'
     </script>" ;
     
 }
 else {
     echo "<script>
-        alert ('data gagal ditambahkan');
+        alert ('data gagal diubah!');
         document.location.href = 'kp.php'
     </script>";
 }
@@ -24,7 +33,7 @@ $mhasiswa = query("SELECT * FROM anggota_kelompok");
 <div class="col-md-12">
             <div class="card card-default">
               <div class="card-header">
-              <h3 class="card-title">Formulir <small><em>Pengisian Surat</em> Praktik Kerja</small></h3>
+              <h3 class="card-title">Edit <small><em>Folmulir</em> Surat Kerja Praktik </small></h3>
               </div>
               <div class="card-body">
                 <div id="actions" class="row">
@@ -32,8 +41,8 @@ $mhasiswa = query("SELECT * FROM anggota_kelompok");
                     <div class="btn-group w-100">
                       <!-- <input type="file" class="file-input" name="file" id="file"> -->
                      
-                      <select name="anggota_kelompok_id" id="" class="btn btn-primary col start" required>
-                      <option value="">Pilih Mahasiswa</option>
+                      <select name="anggota_kelompok_id" id="" class="btn btn-primary col start" required value="<?php $mha["anggota_kelompok_id"] ?>">
+                      <option value="">Ubah Mahasiswa</option>
                       <?php foreach ($mhasiswa as $mhs): ?>
                         <option value =<?= $mhs['id'] ?>><?= $mhs['nama_anggota'] ?></option>
                        <?php endforeach ; ?>
@@ -74,7 +83,8 @@ $mhasiswa = query("SELECT * FROM anggota_kelompok");
                   <div class="col-lg-8 d-flex align-items-center ">
                     <div class="btn-group w-100">
                       <!-- <input type="file" class="file-input" name="file" id="file"> -->
-                      <input type="date" class="btn btn-primary col start" name="tanggal" required>
+                      <input type="date" class="btn btn-primary col start" name="tanggal" required 
+                      value="<?php $mha['tanggal'] ?>" >
                         <!-- <i class="fas fa-upload"></i> -->
                         <!-- <span>Start upload</span> -->
                       </input>

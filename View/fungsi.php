@@ -15,9 +15,13 @@ function surat_ijin($data){
     if(!$proposal){
         return false;
     }
-    $query = "INSERT INTO lembar_kerja VALUES ('', 'tanggal','$proposal', 'anggota_kelompok_id')";
+    $tanggal = $data["tanggal"];
+    $anggota_kelompok_id = $data["anggota_kelompok_id"];
+    $query = "INSERT INTO lembar_kerja VALUES ('', '$tanggal','$proposal', '$anggota_kelompok_id')";
     mysqli_query($conn,$query);
     return mysqli_affected_rows($conn);
+
+
 }
 function upload_surat_ijin(){
 $file = $_FILES['file']['name'];
@@ -44,8 +48,14 @@ if( !in_array($ekstensiFile, $ekstensiFileValid) ){
 move_uploaded_file($lokasi, "File/".$file);
 return $file;
 
-}
 
+
+}
+function hapus($id) {
+    global $conn;
+    mysqli_query($conn, "DELETE FROM lembar_kerja WHERE id = $id");
+    return mysqli_affected_rows($conn);
+}
 
 
 
