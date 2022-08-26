@@ -18,17 +18,17 @@ while ($data = mysqli_fetch_array($result)){
                       <div class="form-group row">
                         <label for="inputName" class="col-sm-2 col-form-label">ID</label>
                         <div class="col-sm-10">
-                          <input type="email" class="form-control" id="inputName" value="<?php echo $id?>">
+                          <input type="text" class="form-control" id="inputName" value="<?php echo $id?>">
                         </div>
                       </div>
                       <div class="form-group row">
                         <label for="inputName" class="col-sm-2 col-form-label">Username</label>
                         <div class="col-sm-10">
-                          <input type="email" class="form-control" id="inputName" value="<?php echo $_SESSION['username']; ?>">
+                          <input type="text" class="form-control" id="inputName" value="<?php echo $_SESSION['username']; ?>">
                         </div>
                       </div>
                       <div class="form-group row">
-                        <label for="inputEmail" class="col-sm-2 col-form-label">Nama</label>
+                        <label for="inputName1" class="col-sm-2 col-form-label">Nama</label>
                         <div class="col-sm-10">
                           <input type="text" class="form-control" id="inputEmail" placeholder="Nama" value="<?php echo $data['nama_dosen']?>">
                         </div>
