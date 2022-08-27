@@ -1,8 +1,8 @@
 # menyembuyikan struktur folder
-Options -indexes
+# Options -indexes
 
 # menyembunyikan informasi server
-ServerSignature Off
+# ServerSignature Off
 
 #kompres file
 <ifModule mod_gzip.c>

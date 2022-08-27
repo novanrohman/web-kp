@@ -6,6 +6,36 @@ $sql = "SELECT * FROM dosen WHERE user_id = '$id'";
 $result = mysqli_query($conn, $sql);
 while ($data = mysqli_fetch_array($result)){
 ?>
+
+<?php
+// --- Fungsi Ubah Data (Update)
+// function ubah($koneksi){
+//   // ubah data
+//   if(isset($_POST['update'])){
+//       $id = $_POST['id'];
+//       $username = $_POST['username'];
+//       $hasil = $_POST['nama_dosen'];
+//       $lama = $_POST['nik'];
+//       $tgl_panen = $_POST['tgl_panen'];
+      
+//       if(!empty($nm_tanaman) && !empty($hasil) && !empty($lama) && !empty($tgl_panen)){
+//           $perubahan = "nama_tanaman='".$nm_tanaman."',hasil_panen=".$hasil.",lama_tanam=".$lama.",tanggal_panen='".$tgl_panen."'";
+//           $sql_update = "UPDATE dosen, user";
+
+//           $update = mysqli_query($koneksi, $sql_update);
+//           if($update && isset($_GET['aksi'])){
+//               if($_GET['aksi'] == 'update'){
+//                   header('location: index.php');
+//               }
+//           }
+//       } else {
+//           $pesan = "Data tidak lengkap!";
+//       }
+//   }
+  
+//   // tampilkan form ubah
+//   if(isset($_GET['id'])){
+      ?>
 <div class="content-wrapper">
   <!-- Content Header (Page header) -->
   <section class="content">
@@ -16,10 +46,10 @@ while ($data = mysqli_fetch_array($result)){
               <div class="card-body">
               <form class="form-horizontal" action="post">
                       <div class="form-group row">
-                        <label for="inputName" class="col-sm-2 col-form-label">ID</label>
-                        <div class="col-sm-10">
-                          <input type="text" class="form-control" id="inputName" value="<?php echo $id?>">
-                        </div>
+                        <!-- <label for="inputName" class="col-sm-2 col-form-label">ID</label> -->
+                        <!-- <div class="col-sm-10"> -->
+                          <input type="hidden" class="form-control" id="inputName" value="<?php echo $id?>">
+                        <!-- </div> -->
                       </div>
                       <div class="form-group row">
                         <label for="inputName" class="col-sm-2 col-form-label">Username</label>
@@ -80,4 +110,4 @@ while ($data = mysqli_fetch_array($result)){
 </div>
 <?php 
 }
- ?>
+?>
