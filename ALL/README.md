@@ -13,29 +13,30 @@ Project web crud untuk matrikulasi matakuliah teknologi rekayasa perangkat lunak
 
 ---
 
-#### Novan
+#### Novan - Dosen
 - [x] Login
-- [ ] Register
-- [ ] Data dosen
+- [x] Register
+- [x] View Data dosen
 - [ ] Edit data dosen (Setting Profile)
 
 
-#### Virgi
+#### Virgi - Dosen
 - [ ] Register Mahasiswa
-- [ ] Data Mahasiswa
-- [ ] Status Bimbingan
-- [ ] Hapus Data Mahasiswa
-- [ ] Edit Data (Jadwal, Status, dll...)
+- [ ] View Data Mahasiswa
+- [ ] Status Bimbingan (View & Edit)
+- [ ] Hapus Data Mahasiswa (Delete Data)
+- [ ] View Jadwal Ujian
 
-#### Putri
+#### Putri - Dosen
 - [ ] Unggah Nilai
 - [ ] Edit Nilai
 - [ ] Hapus Nilai
+- [ ] View Nilai
 
-#### Ferdi
+#### Ferdi - Mahasiswa
 - [ ] Daftar KP
 
-#### Aji
+#### Aji - Mahasiswa
 - [ ] Surat Izin KP
 - [ ] Upload Surat Izin KP
 
