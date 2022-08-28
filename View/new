@@ -1,0 +1,19 @@
+<?php $i = 1; ?>
+                                    <?php foreach ($pendaftaran as $row) : ?>
+                                        <tr class="isi">
+                                            <td class="data"><?= $i++; ?></td>
+                                            <td class="data"><?= $row["tempat_kp"]; ?></td>
+                                            <td class="data"><?= $row["alamat_kp"]; ?></td>
+                                            <td class="data"><?= $row["tanggal_mulai"]; ?></td>
+                                            <td class="data"><?= $row["tanggal_selesai"]; ?></td>
+                                            <td class="data"><?= $row["proposal"]; ?></td>
+                                            <td class="data"><?= $row["anggota_kelompok"]; ?></td>
+                                            <td class="data"><?= $row["nama_dosen"]; ?></td>
+                                            <td class="data"><?= $row["perusahaan_id"]; ?></td>
+                                            <td class="data-tombol">
+                                                <a href="editmahasiswa.php?id=<?= $row["id"]; ?>"><button class="update" name="submit"> Update</button> </a>
+                                                <a href="deletemahasiswa.php?id=<?= $row["id"]; ?>"><button class="delete" name="submit">delete</button></a>
+                                            </td>
+                                        </tr>
+
+                                        <?php endforeach; ?>

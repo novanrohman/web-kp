@@ -4,7 +4,7 @@ $mahasiswa = query("SELECT * FROM anggota_kelompok");
 $dosen = query("SELECT * FROM dosen");
 $perusahaan = query("SELECT * FROM perusahaan");
 if (isset($_POST["submit"])) {
-  if (daftar_kp($_POST) > 0) {
+  if (tambah($_POST) > 0) {
     echo "<script>
           alert ('data berhasil ditambah');
           document.location .href = 'kp.php'
@@ -17,7 +17,6 @@ if (isset($_POST["submit"])) {
   }
 }
 
-
 ?>
 
 <div class="content-wrapper">
@@ -28,7 +27,8 @@ if (isset($_POST["submit"])) {
         <div class="col-md-12">
           <div class="card">
             <div class="card-body">
-              <form class="form-horizontal" method="post" enctype="multipart/form-data">
+
+              <form class="form-horizontal" action="" method="post" enctype="multipart/form-data">
                 <div class="form-group row">
                   <label for="Tempat" class="col-sm-2 col-form-label">Tempat</label>
                   <div class="col-sm-10">
@@ -107,15 +107,11 @@ if (isset($_POST["submit"])) {
                   </div>
                 </div>
               </form>
+
             </div>
-            <!-- /.tab-pane -->
           </div>
-          <!-- /.tab-content -->
-        </div><!-- /.card-body -->
+        </div>
       </div>
-      <!-- /.card -->
     </div>
-</div>
-</div>
-</section>
+  </section>
 </div>

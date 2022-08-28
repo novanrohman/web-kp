@@ -1,118 +1,86 @@
 <?php
-require_once 'connection/db.php';
+include("includes\header.php");
+include("includes\bar.php");
 
-error_reporting(0);
+require 'function.php';
+$pendaftaran = query("SELECT * FROM pendaftaran_kp ORDER BY id DESC");
 
-session_start();
-
-if(isset($_SESSION['username'])) {
-  header("Location: index.php");
-}
-
-if (isset($_POST['submit'])){
-  $username = $_POST['username'];
-  $password = md5($_POST['password']);
-
-  $sql = "SELECT * FROM user WHERE username='$username' AND password='$password'";
-  $result = mysqli_query($conn, $sql);
-  if($result->num_rows > 0){
-    $row = mysqli_fetch_assoc($result);
-    $_SESSION['username'] = $row['username'];
-    $_SESSION['id_role'] = $qry['id_role'];
-    $_SESSION["last_login_time"] = time();
-    if($row['id_role']=="1"){
-        header("location:View/index.php");
-    }
-    else if($row['id_role']=="2"){
-        header("location:mahasiswa1.php");
-    }
-  }else{
-    echo "<script>alert('Username atau password salah')</script>";
-  }
-}
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Log in</title>
-
-  <link rel="shortcut icon" href="poliwangi.png">
-
-  <!-- Google Font: Source Sans Pro -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="AdminLTE-3.2.0/plugins/fontawesome-free/css/all.min.css">
-  <!-- icheck bootstrap -->
-  <link rel="stylesheet" href="AdminLTE-3.2.0/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
-  <!-- Theme style -->
-  <link rel="stylesheet" href="AdminLTE-3.2.0/dist/css/adminlte.min.css">
-</head>
-<body class="hold-transition login-page">
-<div class="login-box">
-  <!-- /.login-logo -->
-  <div class="card card-outline card-primary">
-    <div class="card-body login-card-body">
-      <div class="login-logo">
-        <a href="login.html"><b>Admin</b>LTE</a>
-      </div>
-      
-      <p class="login-box-msg">Sign in to start your session</p>
-
-      <form method="POST">
-        <div class="input-group mb-3">
-          <input type="text" class="form-control" placeholder="Username" name="username" value="<?php echo $username; ?>">
-          <div class="input-group-append">
-            <div class="input-group-text">
-              <span class="fas fa-user"></span>
-            </div>
-          </div>
-        </div>
-        <div class="input-group mb-3">
-          <input type="password" class="form-control" placeholder="Password" name="password" value="<?php echo $_POST['password']; ?>">
-          <div class="input-group-append">
-            <div class="input-group-text">
-              <span class="fas fa-lock"></span>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-8">
-            <div class="icheck-primary">
-              <input type="checkbox" id="remember">
-              <label for="remember">
-                Remember Me
-              </label>
-            </div>
-          </div>
-          <!-- /.col -->
-          <div class="col-4">
-            <button type="submit" class="btn btn-primary btn-block" name="submit">Sign In</button>
-          </div>
-          <!-- /.col -->
-        </div>
-      </form>
-
-
-      <p class="mb-1">
-        <a href="forgot-password.html">I forgot my password</a>
-      </p>
-      <p class="mb-0">
-        <a href="View/regist_dosen.php" class="text-center">Register</a>
-      </p>
+<!-- untuk mengeluarkan data -->
+<div class="content-wrapper">
+    <!-- Preloader -->
+    <div class="preloader flex-column justify-content-center align-items-center">
+        <img class="animation__wobble" src="includes\img\poliwangi.png" alt="POLIWANGI" height="100" width="100">
     </div>
-    <!-- /.login-card-body -->
-  </div>
-</div>
-<!-- /.login-box -->
+    <!-- Content Header (Page header) -->
+    <section class="content">
+        <div class="container-fluid">
+            <!-- <div class="row">
+        <div class="col-md-12"> -->
+            <div class="row my-2">
+                <div class="col-md">
+                    <a href="adddata.php" class="btn btn-primary"><i class="bi bi-person-plus-fill"></i>&nbsp;Tambah Data</a>
+                    <!-- <a href="export.php" target="_blank" class="btn btn-success ms-1"><i class="bi bi-file-earmark-spreadsheet-fill"></i>&nbsp;Ekspor ke Excel</a> -->
 
-<!-- jQuery -->
-<script src="AdminLTE-3.2.0/plugins/jquery/jquery.min.js"></script>
-<!-- Bootstrap 4 -->
-<script src="AdminLTE-3.2.0/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-<!-- AdminLTE App -->
-<script src="AdminLTE-3.2.0/dist/js/adminlte.min.js"></script>
-</body>
-</html>
+                    <div class="row my-2">
+                        <div class="col-md">
+                            <table class="table table-striped table-responsive table-hover text-center">
+                                <thead class="table-dark">
+                                    <tr>
+                                        <th scope="col">No.</th>
+                                        <th scope="col">Tempat KP</th>
+                                        <th scope="col">Alamat</th>
+                                        <th scope="col">Tanggal Mulai</th>
+                                        <th scope="col">Tanggal Selesai</th>
+                                        <th scope="col">Proposal</th>
+                                        <th scope="col">Anggota Kelompok</th>
+                                        <th scope="col">Dosen</th>
+                                        <th scope="col">Perusahaan</th>
+                                        <th scope="col">Aksi</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <?php
+                                    $no = 1;
+                                    $query = "SELECT * FROM pendaftaran_kp
+                                            INNER JOIN anggota_kelompok ON pendaftaran_kp.id_anggota = anggota_kelompok.id_anggota
+                                            INNER JOIN dosen ON pendaftaran_kp.id_dosen = dosen.id_dosen
+                                            INNER JOIN perusahaan ON pendaftaran_kp.id_perusahaan = perusahaan.id_perusahaan
+                                            ";
+                                    $sql1 = mysqli_query($conn, $query) or die(mysqli_error($conn));
+                                    while ($data = mysqli_fetch_array($sql1)) { ?>
+                                        <tr>
+                                            <td scope="row"><?= $no++ ?></td>
+                                            <td scope="row"><?= $data['tempat_kp'] ?></td>
+                                            <td scope="row"><?= $data['alamat_kp'] ?></td>
+                                            <td scope="row"><?= $data['tanggal_mulai'] ?></td>
+                                            <td scope="row"><?= $data['tanggal_selesai'] ?></td>
+                                            <td scope="row"><?= $data['proposal'] ?></td>
+                                            <td scope="row"><?= $data['nama_anggota'] ?></td>
+                                            <td scope="row"><?= $data['nama_dosen'] ?></td>
+                                            <td scope="row"><?= $data['nama_perusahaan'] ?></td>
+                                            <td scope="row">
+                                                <a href="change.php?id=<?= $data['id']; ?>" class="btn btn-warning btn-sm" style="font-weight: 600;"><i class="bi bi-pencil-square"></i>&nbsp;Ubah</a> |
+                                                <a href="del.php?id=<?= $data['id']; ?>" class="btn btn-danger btn-sm" style="font-weight: 600;" onclick="return confirm('Apakah anda yakin ingin menghapus data <?= $data['nama_anggota']; ?> ?');"><i class="bi bi-trash-fill"></i>&nbsp;Hapus</a>
+                                            </td>
+                                        </tr>
+                                    <?php
+                                    } ?>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+
+
+<?php
+include("includes/scripts.php");
+include("includes/footer.php");
+
+?>
