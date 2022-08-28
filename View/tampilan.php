@@ -7,6 +7,8 @@ require 'fungsi.php';
 // $result = mysqli_query($conn, "SELECT * FROM lembar_kerja");
 
 $tampil1 = query("SELECT * FROM lembar_kerja");
+$mhasiswa = query("SELECT * FROM anggota_kelompok");
+
 
 //ambil (fetch) data lembar_kerja dari object result
 //mysqli_fetch_row() mengembalikan array numerik | mysqli_fetch_assoc() mengembalikan array assosiatif | mysqli_fetch_array() ada row dan assoc| mysqli_fetch_object()
@@ -55,23 +57,39 @@ $tampil1 = query("SELECT * FROM lembar_kerja");
                     <th>File</th>
                     <th>Edit</th>
                 </tr>
-
+                <?php foreach ($mhasiswa as $mhs): ?>
+                  
+                  <?php endforeach ; ?>
                 <?php 
                 $i=1;
                 ?>
 
+
+                
                 <?php foreach($tampil1 as $row) : ?>
                 <tr>
                         <td><?= $i ?></td>
-                        <td><?= $row ["anggota_kelompok_id"] ?> </td>
+                        
+                        <td><?= $row ['anggota_kelompok_id'] ?> </td>
+                      
+
                         <td><?= $row ["tanggal"] ?> </td>
                         <td><?= $row ["file"] ?> </td>
-                        <td><button type="button" class="btn btn-outline-primary" >
-                        <span class="material-symbols-outlined">download</span>
-
-                            <a href="ubah"> </a>
-                            
+                        <td><button type="button" class="btn btn-outline-danger" >
+                        <a href="ubah.php?id=<?= $row ["id"];?>"><span class="material-symbols-outlined">edit</span></a>
+                        
                           </button>
+
+                          <button name="view" type="button" class="btn btn-outline-danger" >
+                            <a href="lihat.php?id=<?php echo $b['id'] ?>"><span class="material-symbols-outlined">plagiarism</span></a>
+                            
+                            
+
+
+                          </button>
+
+                         
+
                           <button type="button" class="btn btn-outline-danger">
                           <a href="hapus.php?id=<?= $row ["id"];?>"><span class="material-symbols-outlined">delete</span></a>
                            
@@ -82,6 +100,7 @@ $tampil1 = query("SELECT * FROM lembar_kerja");
                       </tr>
                       <?php $i++; ?>
                 <?php endforeach; ?>
+                
 
                  </table>
                 

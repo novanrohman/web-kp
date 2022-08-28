@@ -57,6 +57,25 @@ function hapus($id) {
     return mysqli_affected_rows($conn);
 }
 
+function ubah($data) {
+    global $conn;
+    $proposal = upload_surat_ijin();
+    if(!$proposal){
+        return false;
+    }
+    $tanggal = $data["tanggal"];
+    $anggota_kelompok_id = $data["anggota_kelompok_id"];
+    $query = "UPDATE lembar_kerja SET 
+                
+                tanggal = '$tanggal',
+                upload_surat_ijin = '$proposal'
+                anggota_kelompok_id = '$anggota_kelompok_id',
+                
+
+
+    mysqli_query($conn,$query);
+    return mysqli_affected_rows($conn);
+}
 
 
 ?>

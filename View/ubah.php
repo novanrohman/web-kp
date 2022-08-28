@@ -1,13 +1,10 @@
 <!-- /.row -->
-<?php
 
+<?php
 require "fungsi.php";
-//ambil data di url
 $id = $_GET["id"];
 
-$mha = query("SELECT * FROM lembar_kerja WHERE id = $id")[0];
-
-
+$mhk = query("SELECT * FROM lembar_kerja WHERE id = $id")[0];
 
 
 if (isset($_POST["submit"])){
@@ -33,15 +30,14 @@ $mhasiswa = query("SELECT * FROM anggota_kelompok");
 <div class="col-md-12">
             <div class="card card-default">
               <div class="card-header">
-              <h3 class="card-title">Edit <small><em>Folmulir</em> Surat Kerja Praktik </small></h3>
+              <h3 class="card-title">Formulir <small><em>Perubahan surat</em> Praktik kerja mahasiswa </small></h3>
               </div>
               <div class="card-body">
                 <div id="actions" class="row">
                   <div class="col-lg-5 d-flex align-items-center ">
                     <div class="btn-group w-100">
                       <!-- <input type="file" class="file-input" name="file" id="file"> -->
-                     
-                      <select name="anggota_kelompok_id" id="" class="btn btn-primary col start" required value="<?php $mha["anggota_kelompok_id"] ?>">
+                      <select name="anggota_kelompok_id" id="" class="btn btn-primary col start" required value="<?php $mhk["anggota_kelompok_id"]; ?>">
                       <option value="">Ubah Mahasiswa</option>
                       <?php foreach ($mhasiswa as $mhs): ?>
                         <option value =<?= $mhs['id'] ?>><?= $mhs['nama_anggota'] ?></option>
@@ -83,8 +79,7 @@ $mhasiswa = query("SELECT * FROM anggota_kelompok");
                   <div class="col-lg-8 d-flex align-items-center ">
                     <div class="btn-group w-100">
                       <!-- <input type="file" class="file-input" name="file" id="file"> -->
-                      <input type="date" class="btn btn-primary col start" name="tanggal" required 
-                      value="<?php $mha['tanggal'] ?>" >
+                      <input type="date" class="btn btn-primary col start" name="tanggal" required value="<?php $mhk["tanggal"]; ?>">
                         <!-- <i class="fas fa-upload"></i> -->
                         <!-- <span>Start upload</span> -->
                       </input>
@@ -127,7 +122,7 @@ $mhasiswa = query("SELECT * FROM anggota_kelompok");
                   <div class="col-lg-9 d-flex align-items-center">
                     <div class="btn-group w-100">
                       <!-- <input type="file" class="file-input" name="file" id="file"> -->
-                      <input type="file" class="btn btn-primary col start" name="file" required>
+                      <input type="file" class="btn btn-primary col start" name="file" required value="<?php $mhk["file"];?>">
                         <!-- <i class="fas fa-upload"></i> -->
                         <!-- <span>Start upload</span> -->
                       </input>
@@ -136,7 +131,7 @@ $mhasiswa = query("SELECT * FROM anggota_kelompok");
                   
                       <button data-dz-remove class="btn btn-warning cancel " name="submit">
                         <i class="fas fa fa-send"></i>
-                        <span>Send</span>
+                        <span>Ubah Data</span>
                       </button>
                 </div>
                 
