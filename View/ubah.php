@@ -4,7 +4,7 @@
 require "fungsi.php";
 $id = $_GET["id"];
 
-$mhk = query("SELECT * FROM lembar_kerja WHERE id = $id")[0];
+$mhk = query("SELECT lembar_kerja.id, file, tanggal,anggota_kelompok_id, nama_anggota FROM lembar_kerja INNER JOIN anggota_kelompok ON lembar_kerja.anggota_kelompok_id = anggota_kelompok.id")[0];
 
 
 if (isset($_POST["submit"])){
@@ -26,7 +26,8 @@ else {
 $mhasiswa = query("SELECT * FROM anggota_kelompok");
 ?>
 <form action="" method="post" enctype="multipart/form-data">
-
+<input type="hidden" name="id" id="id" required value="<?= $mhk["id"];?>"/>
+<input type="hidden" name="file_lama" id="id" required value="<?= $mhk["file"];?>"/>
 <div class="col-md-12">
             <div class="card card-default">
               <div class="card-header">

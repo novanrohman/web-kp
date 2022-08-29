@@ -6,8 +6,8 @@ require 'fungsi.php';
 
 // $result = mysqli_query($conn, "SELECT * FROM lembar_kerja");
 
-$tampil1 = query("SELECT * FROM lembar_kerja");
-$mhasiswa = query("SELECT * FROM anggota_kelompok");
+// $tampil1 = query("SELECT * FROM lembar_kerja");
+$tampil1 = query("SELECT lembar_kerja.id, file, tanggal,anggota_kelompok_id, nama_anggota FROM lembar_kerja INNER JOIN anggota_kelompok ON lembar_kerja.anggota_kelompok_id = anggota_kelompok.id")
 
 
 //ambil (fetch) data lembar_kerja dari object result
@@ -57,9 +57,7 @@ $mhasiswa = query("SELECT * FROM anggota_kelompok");
                     <th>File</th>
                     <th>Edit</th>
                 </tr>
-                <?php foreach ($mhasiswa as $mhs): ?>
-                  
-                  <?php endforeach ; ?>
+                
                 <?php 
                 $i=1;
                 ?>
@@ -70,7 +68,7 @@ $mhasiswa = query("SELECT * FROM anggota_kelompok");
                 <tr>
                         <td><?= $i ?></td>
                         
-                        <td><?= $row ['anggota_kelompok_id'] ?> </td>
+                        <td><?= $row ['nama_anggota'] ?> </td>
                       
 
                         <td><?= $row ["tanggal"] ?> </td>

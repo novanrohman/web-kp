@@ -57,25 +57,25 @@ function hapus($id) {
     return mysqli_affected_rows($conn);
 }
 
-function ubah($data) {
+function ubah($data)
+{
     global $conn;
-    $proposal = upload_surat_ijin();
-    if(!$proposal){
-        return false;
+    $id = $data["id"];
+    $file_lama = $data["file_lama"];
+    $tanggal = htmlspecialchars($data["tanggal"]);
+    $ketua = ($data["anggota_kelompok_id"]);
+    if ($_FILES['file']['error'] === 4) {
+        $file = $file_lama;
+    } else {
+        $file =  Upload_surat_ijin();
     }
-    $tanggal = $data["tanggal"];
-    $anggota_kelompok_id = $data["anggota_kelompok_id"];
     $query = "UPDATE lembar_kerja SET 
-                
-                tanggal = '$tanggal',
-                upload_surat_ijin = '$proposal'
-                anggota_kelompok_id = '$anggota_kelompok_id',
-                
-
-
-    mysqli_query($conn,$query);
+        tanggal = '$tanggal',
+        file = '$file',
+        anggota_kelompok_id = '$ketua'
+        WHERE id = '$id'";
+    mysqli_query($conn, $query);
     return mysqli_affected_rows($conn);
 }
-
 
 ?>
