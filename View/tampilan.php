@@ -7,7 +7,9 @@ require 'fungsi.php';
 // $result = mysqli_query($conn, "SELECT * FROM lembar_kerja");
 
 // $tampil1 = query("SELECT * FROM lembar_kerja");
-$tampil1 = query("SELECT lembar_kerja.id, file, tanggal,anggota_kelompok_id, nama_anggota FROM lembar_kerja INNER JOIN anggota_kelompok ON lembar_kerja.anggota_kelompok_id = anggota_kelompok.id")
+
+$tampil1 = query("SELECT * FROM lembar_kerja");
+
 
 
 //ambil (fetch) data lembar_kerja dari object result
@@ -53,22 +55,25 @@ $tampil1 = query("SELECT lembar_kerja.id, file, tanggal,anggota_kelompok_id, nam
                 <tr>
                     <th>ID</th>
                     <th>User</th>
+                    <th>Name</th>
                     <th>Date</th>
                     <th>File</th>
                     <th>Edit</th>
                 </tr>
-                
+
                 <?php 
                 $i=1;
                 ?>
 
 
                 
-                <?php foreach($tampil1 as $row) : ?>
+                <?php foreach($tampil1 as $row ) : ?>
                 <tr>
                         <td><?= $i ?></td>
                         
-                        <td><?= $row ['nama_anggota'] ?> </td>
+                        <td><?= $row ['anggota_kelompok_id'] ?> </td>
+                       
+                        
                       
 
                         <td><?= $row ["tanggal"] ?> </td>
@@ -79,7 +84,7 @@ $tampil1 = query("SELECT lembar_kerja.id, file, tanggal,anggota_kelompok_id, nam
                           </button>
 
                           <button name="view" type="button" class="btn btn-outline-danger" >
-                            <a href="lihat.php?id=<?php echo $b['id'] ?>"><span class="material-symbols-outlined">plagiarism</span></a>
+                            <a href="lihat.php?id=<?= $row ["id"];?>"><span class="material-symbols-outlined">plagiarism</span></a>
                             
                             
 

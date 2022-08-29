@@ -209,10 +209,10 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="kp.php?page=unggah_nilai" class="nav-link">
+                <a href="kp.php?page=ubah" class="nav-link">
                   <i class="nav-icon fas fa-edit"></i>
                   <p>
-                    Unggah Nilai
+                    Ubah Data
                   </p>
                 </a>
                 <li class="nav-item">
@@ -264,8 +264,8 @@
             include "data_mahasiswa.php";
             break;
 
-            case 'unggah_nilai':
-            include "unggah_nilai.php";
+            case 'ubah':
+            include "ubah.php";
             break;
 
             case 'ubah':

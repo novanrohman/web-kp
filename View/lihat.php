@@ -1,26 +1,15 @@
 <?php
-
+//  session_start();
+//      if (!isset($_SESSION["login"])){
+//       header("Location: login.php");
+//       exit;
+//      }
+require "fungsi.php";
+$id = $_GET['id'];
+$sql = $conn->query("SELECT * FROM lembar_kerja WHERE id='$id'");
+$result = $sql->fetch_assoc();
 ?>
-<div class="countainer">
-    <div class="row">
-        <ol class="breadcrumb" style="box-shadow: 2px 2px 8px #888888;">
-            <p><img src="../assets/icons/archive.svg" style="float: left; padding-top: 5px;">
-        <h4>&nbsp;&nbsp;&nbsp;&nbsp;</h4></p>
-    </ol>
-    </div>
 
-    <?php 
-    $id=$_GET['id'];
-    $data= query ("SELECT * FROM lembar_kerja ");
-    while ($b=($data)){
-        ?>
-    
-        
+<title>Preview PDF</title>
 
-        <object data="../asset/file/<?php echo $b['file'] ?>" width="100%" height="1000px" style="border: 1px solid; box-shadow: 2px 2px 8px #000000;"></object>
-        
-        <?php
-    }
-    ?>  
-    
-</div>
+<embed src="file/<?= $result['file'];?>" type="application/pdf" width="100%" height="100%">

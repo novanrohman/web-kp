@@ -1,5 +1,4 @@
 <!-- /.row -->
-
 <?php
 require "fungsi.php";
 $id = $_GET["id"];
