@@ -4,6 +4,8 @@ $user = "root";
 $pass = "";
 $database="db_kp";
 
+// global $conn;
+
 $conn = new mysqli($server, $user, $pass, $database);
 
  if($conn -> connect_error) {
