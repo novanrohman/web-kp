@@ -25,7 +25,7 @@ function tambah($data)
         return false;
     }
 
-    $query = "INSERT INTO nilai VALUES ('','$nilai_pembimbing_lapangan','$nilai_pembimbing_kp','$nilai_penguji','$pendaftaran_ujian_kp_id','$bukti_nilai_pembimbing_lapangan')";
+    $query = "INSERT INTO nilai VALUES ('','$nilai_pembimbing_lapangan','$nilai_pembimbing_kp','$nilai_penguji','$bukti_nilai_pembimbing_lapangan','$pendaftaran_ujian_kp_id')";
     mysqli_query($conn, $query);
     return mysqli_affected_rows($conn);
 }
@@ -67,7 +67,7 @@ function upload_bukti()
     return $file;
 }
 
-function change($data)
+function ubah($data)
 {
     global $conn;
     $id = $data["id"];

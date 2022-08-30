@@ -15,13 +15,13 @@ $nilai = query("SELECT * FROM nilai WHERE id = $id")[0];
 if (isset($_POST['ubah'])) {
     if (ubah($_POST) > 0) {
         echo "<script>
-                alert('Data siswa berhasil diubah!');
+                alert('Data nilai mahasiswa berhasil diubah!');
                 document.location.href = 'index.php';
             </script>";
     } else {
         // Jika fungsi ubah dibawah dari 0/data tidak terubah, maka munculkan alert dibawah
         echo "<script>
-                alert('Data siswa gagal diubah!');
+                alert('Data nilai mahasiswa gagal diubah!');
             </script>";
     }
 }
@@ -39,7 +39,7 @@ if (isset($_POST['ubah'])) {
         </div>
         <div class="row my-2">
             <div class="col-md">
-                <form action="" method="post" enctype="multipart/form-data">
+                <form action="" method="POST" enctype="multipart/form-data">
                     <input type="hidden" name="id" value="<?= $nilai['id']; ?>">
                     <div class="mb-3">
                         <label for="nilai_pembimbing_lapangan" class="form-label">Nilai Pembimbing Lapangan</label>

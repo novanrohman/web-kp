@@ -9,7 +9,7 @@ require 'fungsi.php';
 if (isset($_POST['simpan'])) {
     if (tambah($_POST) > 0) {
         echo "<script>
-                alert('Data siswa berhasil ditambahkan!');
+                alert('Data nilai mahasiswa berhasil ditambahkan!');
                 document.location.href = 'index.php';
             </script>";
     } else {
