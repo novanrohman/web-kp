@@ -1,118 +1,67 @@
 <?php
-require_once 'connection/db.php';
+include ('includes/header.php');
+include ('includes/navbar.php');
 
-error_reporting(0);
+// Memanggil atau membutuhkan file function.php
+require 'fungsi.php';
 
-session_start();
-
-if(isset($_SESSION['username'])) {
-  header("Location: index.php");
-}
-
-if (isset($_POST['submit'])){
-  $username = $_POST['username'];
-  $password = md5($_POST['password']);
-
-  $sql = "SELECT * FROM user WHERE username='$username' AND password='$password'";
-  $result = mysqli_query($conn, $sql);
-  if($result->num_rows > 0){
-    $row = mysqli_fetch_assoc($result);
-    $_SESSION['username'] = $row['username'];
-    $_SESSION['id_role'] = $qry['id_role'];
-    $_SESSION["last_login_time"] = time();
-    if($row['id_role']=="1"){
-        header("location:View/index.php");
-    }
-    else if($row['id_role']=="2"){
-        header("location:mahasiswa1.php");
-    }
-  }else{
-    echo "<script>alert('Username atau password salah')</script>";
-  }
-}
+// Menampilkan semua data dari table siswa berdasarkan nis secara Descending
+$nilai = query("SELECT * FROM nilai ORDER BY id DESC");
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Log in</title>
-
-  <link rel="shortcut icon" href="poliwangi.png">
-
-  <!-- Google Font: Source Sans Pro -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="AdminLTE-3.2.0/plugins/fontawesome-free/css/all.min.css">
-  <!-- icheck bootstrap -->
-  <link rel="stylesheet" href="AdminLTE-3.2.0/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
-  <!-- Theme style -->
-  <link rel="stylesheet" href="AdminLTE-3.2.0/dist/css/adminlte.min.css">
-</head>
-<body class="hold-transition login-page">
-<div class="login-box">
-  <!-- /.login-logo -->
-  <div class="card card-outline card-primary">
-    <div class="card-body login-card-body">
-      <div class="login-logo">
-        <a href="login.html"><b>Admin</b>LTE</a>
-      </div>
-      
-      <p class="login-box-msg">Sign in to start your session</p>
-
-      <form method="POST">
-        <div class="input-group mb-3">
-          <input type="text" class="form-control" placeholder="Username" name="username" value="<?php echo $username; ?>">
-          <div class="input-group-append">
-            <div class="input-group-text">
-              <span class="fas fa-user"></span>
+    <!-- Container -->
+    <div class="container">
+        <div class="row my-2">
+            <div class="col-md">
+                <h3 class="text-center fw-bold text-uppercase">Nilai Kerja Praktek</h3>
+                <hr>
             </div>
-          </div>
         </div>
-        <div class="input-group mb-3">
-          <input type="password" class="form-control" placeholder="Password" name="password" value="<?php echo $_POST['password']; ?>">
-          <div class="input-group-append">
-            <div class="input-group-text">
-              <span class="fas fa-lock"></span>
+        <div class="row my-2">
+            <div class="col-md">
+                <a href="create.php" class="btn btn-primary"><i class="bi bi-person-plus-fill"></i>&nbsp;Tamah Nilai</a>
             </div>
-          </div>
         </div>
-        <div class="row">
-          <div class="col-8">
-            <div class="icheck-primary">
-              <input type="checkbox" id="remember">
-              <label for="remember">
-                Remember Me
-              </label>
+        <div class="row my-3">
+            <div class="col-md">
+                <table id="data" class="table table-striped table-responsive table-hover text-center" style="width:100%">
+                    <thead class="table-dark">
+                        <tr>
+                            <th>No.</th>
+                            <th>Nilai Pembimbing Lapangan</th>
+                            <th>Nilai Pembimbing Kp</th>
+                            <th>Nilai Penguji</th>
+                            <th>Bukti Nilai Pembimbing Lapangan</th>
+                            <th>Pendaftaran Ujian Kp</th>
+                            <th>Aksi</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php $no = 1; ?>
+                        <?php foreach ($nilai as $data) : ?>
+                            <tr>
+                                <td><?= $no++; ?></td>
+                                <td><?= $data['nilai_pembimbing_lapangan']; ?></td>
+                                <td><?= $data['nilai_pembimbing_kp']; ?></td>
+                                <td><?= $data['nilai_penguji']; ?></td>
+                                <td><?= $data['bukti_nilai_pembimbing_lapangan']; ?></td>
+                                <td><?= $data['pendaftaran_ujian_kp_id']; ?></td>
+                                <td>
+                                    <button class="btn btn-success btn-sm text-white detail" data-id="<?= $data['id']; ?>" style="font-weight: 600;"><i class="bi bi-info-circle-fill"></i>&nbsp;Detail</button> |
+
+                                    <a href="update.php?id=<?= $data['id']; ?>" class="btn btn-warning btn-sm" style="font-weight: 600;"><i class="bi bi-pencil-square"></i>&nbsp;Ubah</a> |
+
+                                    <a href="hapus.php?id=<?= $data['id']; ?>" class="btn btn-danger btn-sm" style="font-weight: 600;" onclick="return confirm('Apakah anda yakin ingin menghapus data <?= $data['nilai_pembimbing_lapangan']; ?> ?');"><i class="bi bi-trash-fill"></i>&nbsp;Hapus</a>
+                                </td>
+                            </tr>
+                         <?php endforeach; ?>
+                    </tbody>
+                </table>
             </div>
-          </div>
-          <!-- /.col -->
-          <div class="col-4">
-            <button type="submit" class="btn btn-primary btn-block" name="submit">Sign In</button>
-          </div>
-          <!-- /.col -->
         </div>
-      </form>
-
-
-      <p class="mb-1">
-        <a href="forgot-password.html">I forgot my password</a>
-      </p>
-      <p class="mb-0">
-        <a href="View/regist_dosen.php" class="text-center">Register</a>
-      </p>
     </div>
-    <!-- /.login-card-body -->
-  </div>
-</div>
-<!-- /.login-box -->
 
-<!-- jQuery -->
-<script src="AdminLTE-3.2.0/plugins/jquery/jquery.min.js"></script>
-<!-- Bootstrap 4 -->
-<script src="AdminLTE-3.2.0/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-<!-- AdminLTE App -->
-<script src="AdminLTE-3.2.0/dist/js/adminlte.min.js"></script>
-</body>
-</html>
+    <?php
+    include ('includes/script.php');
+    include ('includes/footer.php');
+    ?>
