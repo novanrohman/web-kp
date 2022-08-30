@@ -80,11 +80,11 @@ if (isset($_POST['ubah'])) {
                             <label for="Anggota Mahasiswa" class="col-sm-2 col-form-label">Anggota Mahasiswa</label>
                             <div class="col-sm-10">
                                 <select class="form-control" name="id_anggota">
-                                    <option value="">Pilih Mahasiswa</option>
+                                    <option value="<?= $mahasiswa['nama_anggota'] ?>>Pilih Mahasiswa</option>
                                     <?php foreach ($mahasiswa as $mhs) : ?>
-                                        <option value="<?= $mhs['id_anggota'] ?>"><?= $mhs['nama_anggota'] ?>
-                                        </option>
-                                    <?php endforeach; ?>
+                                        <option value=" <?= $mhs['id_anggota'] ?>"><?= $mhs['nama_anggota'] ?>
+                                    </option>
+                                <?php endforeach; ?>
                                 </select>
                             </div>
                         </div>

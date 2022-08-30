@@ -156,7 +156,7 @@
         <!-- Add icons to the links using the .nav-icon class
                  with font-awesome or any other icon font library -->
         <li class="nav-item menu-open">
-          <a href="kp.php?page=dashboard" class="nav-link active">
+          <a href="kp.php?page=dashboard" class="nav-link">
             <i class="nav-icon fas fa-tachometer-alt"></i>
             <p>
               Dashboard
@@ -179,7 +179,7 @@
             </p>
           </a>
         <li class="nav-item">
-          <a href="index.php?page=daftarkp" class="nav-link">
+          <a href="index.php?page=index.php" class="nav-link active">
             <i class="nav-icon fas fa-edit"></i>
             <p>
               Pendaftaran KP
