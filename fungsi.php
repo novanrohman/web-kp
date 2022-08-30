@@ -77,5 +77,3 @@ function ubah($data)
     mysqli_query($conn, $query);
     return mysqli_affected_rows($conn);
 }
-
-?>

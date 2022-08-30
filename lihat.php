@@ -12,4 +12,4 @@ $result = $sql->fetch_assoc();
 
 <title>Preview PDF</title>
 
-<embed src="file/<?= $result['file'];?>" type="application/pdf" width="100%" height="100%">
+<embed src="file/<?= $result['file']; ?>" type="application/pdf" width="100%" height="100%">

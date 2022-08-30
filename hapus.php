@@ -15,6 +15,3 @@ if (hapus($id) > 0 ) {
             document.location.href = 'kp.php'
         </script>";
     }
-
-
-?>

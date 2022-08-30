@@ -10,4 +10,3 @@ $conn = new mysqli($server, $user, $pass, $database);
 //   die("Connection error" . $conn->connection_error);
 // }
 // echo "Connected";
-?>
