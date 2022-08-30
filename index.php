@@ -29,16 +29,16 @@ $pendaftaran = query("SELECT * FROM pendaftaran_kp ORDER BY id DESC");
                             <table class="table table-striped table-responsive table-hover text-center">
                                 <thead class="table-dark">
                                     <tr>
-                                        <th>No.</th>
-                                        <th>Tempat KP</th>
-                                        <th>Alamat</th>
-                                        <th>Tanggal Mulai</th>
-                                        <th>Tanggal Selesai</th>
-                                        <th>Proposal</th>
-                                        <th>Anggota Kelompok</th>
-                                        <th>Dosen</th>
-                                        <th>Perusahaan</th>
-                                        <th>Aksi</th>
+                                        <th scope="col">No.</th>
+                                        <th scope="col">Tempat KP</th>
+                                        <th scope="col">Alamat</th>
+                                        <th scope="col">Tanggal Mulai</th>
+                                        <th scope="col">Tanggal Selesai</th>
+                                        <th scope="col">Proposal</th>
+                                        <th scope="col">Anggota Kelompok</th>
+                                        <th scope="col">Dosen</th>
+                                        <th scope="col">Perusahaan</th>
+                                        <th scope="col">Aksi</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -52,17 +52,17 @@ $pendaftaran = query("SELECT * FROM pendaftaran_kp ORDER BY id DESC");
                                     $sql1 = mysqli_query($conn, $query) or die(mysqli_error($conn));
                                     while ($data = mysqli_fetch_array($sql1)) { ?>
                                         <tr>
-                                            <td><?= $no++ ?></td>
-                                            <td><?= $data['tempat_kp'] ?></td>
-                                            <td><?= $data['alamat_kp'] ?></td>
-                                            <td><?= $data['tanggal_mulai'] ?></td>
-                                            <td><?= $data['tanggal_selesai'] ?></td>
-                                            <td><?= $data['proposal'] ?></td>
-                                            <td><?= $data['nama_anggota'] ?></td>
-                                            <td><?= $data['nama_dosen'] ?></td>
-                                            <td><?= $data['nama_perusahaan'] ?></td>
-                                            <td>
-                                                <a href="detail.php?id=<?= $data['id']; ?>" class="btn btn-success btn-sm" style="font-weight: 600;"><i class="bi bi-pencil-square"></i>&nbsp;Detail</a> |
+                                            <td scope="row"><?= $no++ ?></td>
+                                            <td scope="row"><?= $data['tempat_kp'] ?></td>
+                                            <td scope="row"><?= $data['alamat_kp'] ?></td>
+                                            <td scope="row"><?= $data['tanggal_mulai'] ?></td>
+                                            <td scope="row"><?= $data['tanggal_selesai'] ?></td>
+                                            <td scope="row"><?= $data['proposal'] ?></td>
+                                            <td scope="row"><?= $data['nama_anggota'] ?></td>
+                                            <td scope="row"><?= $data['nama_dosen'] ?></td>
+                                            <td scope="row"><?= $data['nama_perusahaan'] ?></td>
+                                            <td scope="row">
+                                                <a href="detail.php?id=<?= $data['id']; ?>" class="btn btn-success btn-sm" style="font-weight: 600;"><i class="bi bi-pencil-square"></i>&nbsp;Ubah</a> |
                                                 <a href="change.php?id=<?= $data['id']; ?>" class="btn btn-warning btn-sm" style="font-weight: 600;"><i class="bi bi-pencil-square"></i>&nbsp;Ubah</a> |
                                                 <a href="del.php?id=<?= $data['id']; ?>" class="btn btn-danger btn-sm" style="font-weight: 600;" onclick="return confirm('Apakah anda yakin ingin menghapus data <?= $data['nama_anggota']; ?> ?');"><i class="bi bi-trash-fill"></i>&nbsp;Hapus</a>
                                             </td>
