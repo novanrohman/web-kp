@@ -2,6 +2,7 @@
 
 include '../connection/db.php';
 
+    
 $nama=$_POST['nama'];
 $nim=$_POST['nim'];
 $kelas=$_POST['kelas'];
@@ -12,18 +13,23 @@ $query=mysqli_query($conn, "INSERT INTO mahasiswa VALUES('','$nama','$nim','$kel
 // var_dump($query);
 
 if($query) {
-    echo "
-    <script type='text/jacascript'>
-        alert('Tambah Data Berhasil.');
+    ?>
+echo"
+<script type='text/javascript'>
+    alert('Tambah Data Berhasil.');
+    window.location='../View/index.php?page=data_mahasiswa';
     </script>";
-    
+<?php
 }else{
-    echo"
-    <script type='text/jacascript'>
-        alert('Ada Kesalahan Saat Input.');
+    ?>
+echo"
+<script type='text/javascript'>
+    alert('Ada Kesalahan Saat Input.');
+    window.location='../View/index.php?page=data_mahasiswa';
     </script>";
-
-    header("../View/data_mahasiswa.php");
-      
+<?php
+    header("index.php?page=data_mahasiswa" );
+    //   ygftgsys3edaez
 }
+
 ?>

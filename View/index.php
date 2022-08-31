@@ -1,12 +1,13 @@
 //<?php
- 
-// session_start();
- 
-// if (!isset($_SESSION['username'])) {
-    // header("Location: ../index.php");
-// }
- 
-//?>
+
+  // session_start();
+
+  // if (!isset($_SESSION['username'])) {
+  // header("Location: ../index.php");
+  // }
+
+  //
+  ?>
 <?=
 include '../controler/database.php';
 $db = new database();
@@ -22,18 +23,12 @@ $db = new database();
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>AdminLTE 3 | Dashboard 2</title>
 
-   <!-- link yang sambung ke crud tambah.php -->
-   <!-- <a href="tambah.php">+ TAMBAH DOSEN</a> -->
-
-
   <link rel="shortcut icon" href="../poliwangi.png">
   <script src="https://kit.fontawesome.com/bdf66ddc22.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet"
-    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 
   <!-- Google Font: Source Sans Pro -->
-  <link rel="stylesheet"
-    href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
   <!-- Font Awesome Icons -->
   <link rel="stylesheet" href="../AdminLTE-3.2.0/plugins/fontawesome-free/css/all.min.css">
   <!-- overlayScrollbars -->
@@ -94,8 +89,7 @@ $db = new database();
             <a href="#" class="dropdown-item">
               <!-- Message Start -->
               <div class="media">
-                <img src="../AdminLTE-3.2.0/dist/img/user1-128x128.jpg" alt="User Avatar"
-                  class="img-size-50 mr-3 img-circle">
+                <img src="../AdminLTE-3.2.0/dist/img/user1-128x128.jpg" alt="User Avatar" class="img-size-50 mr-3 img-circle">
                 <div class="media-body">
                   <h3 class="dropdown-item-title">
                     Brad Diesel
@@ -111,8 +105,7 @@ $db = new database();
             <a href="#" class="dropdown-item">
               <!-- Message Start -->
               <div class="media">
-                <img src="../AdminLTE-3.2.0/dist/img/user8-128x128.jpg" alt="User Avatar"
-                  class="img-size-50 img-circle mr-3">
+                <img src="../AdminLTE-3.2.0/dist/img/user8-128x128.jpg" alt="User Avatar" class="img-size-50 img-circle mr-3">
                 <div class="media-body">
                   <h3 class="dropdown-item-title">
                     John Pierce
@@ -128,8 +121,7 @@ $db = new database();
             <a href="#" class="dropdown-item">
               <!-- Message Start -->
               <div class="media">
-                <img src="../AdminLTE-3.2.0/dist/img/user3-128x128.jpg" alt="User Avatar"
-                  class="img-size-50 img-circle mr-3">
+                <img src="../AdminLTE-3.2.0/dist/img/user3-128x128.jpg" alt="User Avatar" class="img-size-50 img-circle mr-3">
                 <div class="media-body">
                   <h3 class="dropdown-item-title">
                     Nora Silvester
@@ -183,127 +175,129 @@ $db = new database();
     </nav>
     <!-- /.navbar -->
 
-        <!-- Main Sidebar Container -->
-        <aside class="main-sidebar sidebar-dark-primary elevation-4">
-        <!-- Brand Logo -->
-        <a href="index3.html" class="brand-link">
-          <img src="../AdminLTE-3.2.0/dist/img/AdminLTELogo.png" alt="AdminLTE Logo"
-            class="brand-image img-circle elevation-3" style="opacity: .8">
-          <span class="brand-text font-weight-light">AdminLTE 3</span>
-        </a>
-  
-        <!-- Sidebar -->
-        <div class="sidebar">
-          <!-- Sidebar user panel (optional) -->
-          <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-            <div class="image">
-              <img src="../AdminLTE-3.2.0/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
-            </div>
-            <div class="info">
-              <a href="#" class="d-block"><?php echo $_SESSION['username']; ?></a>
-            </div>
+    <!-- Main Sidebar Container -->
+    <aside class="main-sidebar sidebar-dark-primary elevation-4">
+      <!-- Brand Logo -->
+      <a href="index3.html" class="brand-link">
+        <img src="../AdminLTE-3.2.0/dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+        <span class="brand-text font-weight-light">AdminLTE 3</span>
+      </a>
+
+      <!-- Sidebar -->
+      <div class="sidebar">
+        <!-- Sidebar user panel (optional) -->
+        <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+          <div class="image">
+            <img src="../AdminLTE-3.2.0/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
           </div>
-  
-          <!-- Sidebar Menu -->
-          <nav class="mt-2">
-            <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-              <li class="nav-header">MENU</li>
-              <!-- Add icons to the links using the .nav-icon class
-                 with font-awesome or any other icon font library -->
-              <li class="nav-item menu-open">
-                <a href="index.php?page=dashboard" class="nav-link active">
-                  <i class="nav-icon fas fa-tachometer-alt"></i>
-                  <p>
-                    Dashboard
-                  </p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="index.php?page=data_mahasiswa" class="nav-link">
-                  <i class="nav-icon fas fa-table"></i>
-                  <p>
-                    Data Mahasiswa
-                  </p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="index.php?page=unggah_nilai" class="nav-link">
-                  <i class="nav-icon fas fa-edit"></i>
-                  <p>
-                    Unggah Nilai
-                  </p>
-                </a>
-              </li>
-            </ul>
-          </nav>
-          <!-- /.sidebar-menu -->
+          <div class="info">
+            <a href="#" class="d-block"><?php echo $_SESSION['username']; ?></a>
+          </div>
         </div>
-        <!-- /.sidebar -->
-      </aside>
 
-      <!-- Main -->
-        <?php
-        if(isset($_GET['page'])){
-          $page = $_GET['page'];
+        <!-- Sidebar Menu -->
+        <nav class="mt-2">
+          <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+            <li class="nav-header">MENU</li>
+            <!-- Add icons to the links using the .nav-icon class
+                 with font-awesome or any other icon font library -->
+            <li class="nav-item menu-open">
+              <a href="index.php?page=dashboard" class="nav-link active">
+                <i class="nav-icon fas fa-tachometer-alt"></i>
+                <p>
+                  Dashboard
+                </p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="index.php?page=data_mahasiswa" class="nav-link">
+                <i class="nav-icon fas fa-table"></i>
+                <p>
+                  Data Mahasiswa
+                </p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="index.php?page=unggah_nilai" class="nav-link">
+                <i class="nav-icon fas fa-edit"></i>
+                <p>
+                  Unggah Nilai
+                </p>
+              </a>
+            </li>
+          </ul>
+        </nav>
+        <!-- /.sidebar-menu -->
+      </div>
+      <!-- /.sidebar -->
+    </aside>
 
+    <!-- Main -->
+    <?php
+    if (isset($_GET['page'])) {
+      $page = $_GET['page'];
 
-          switch ($page) {
-            case 'dashbhoard':
-            include "dashboard_dosen.php";
-            break;
+      switch ($page) {
+        case 'dashbhoard':
+          include "dashboard_dosen.php";
+          break;
 
-            case 'data_mahasiswa':
-            include "data_mahasiswa.php";
-            break;
+        case 'data_mahasiswa':
+          include "data_mahasiswa.php";
+          break;
 
-            case 'unggah_nilai':
-            include "unggah_nilai.php";
-            break;
+        case 'unggah_nilai':
+          include "unggah_nilai.php";
+          break;
 
-            default:
-            include "dashboard_dosen.php";
-            break;
-          }
-        } else {
-          include "404.php";
-        }
-        ?>
-      <!-- ./Main -->
+        case'detail':
+          include "tampil_data.php";
+          break;
 
-      <!-- Main Footer -->
-<footer class="main-footer">
-    <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">AdminLTE.io</a>.</strong>
-    All rights reserved.
-    <div class="float-right d-none d-sm-inline-block">
-      <b>Version</b> 3.2.0
-    </div>
-  </footer>
-</div>
-<!-- ./wrapper -->
+        default:
+          include "dashboard_dosen.php";
+          break;
+      }
+    } else {
+      include "404.php";
+    }
+    ?>
+    <!-- ./Main -->
 
-<!-- REQUIRED SCRIPTS -->
-<!-- jQuery -->
-<script src="../AdminLTE-3.2.0/plugins/jquery/jquery.min.js"></script>
-<!-- Bootstrap -->
-<script src="../AdminLTE-3.2.0/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-<!-- overlayScrollbars -->
-<script src="../AdminLTE-3.2.0/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
-<!-- AdminLTE App -->
-<script src="../AdminLTE-3.2.0/dist/js/adminlte.js"></script>
+    <!-- Main Footer -->
+    <footer class="main-footer">
+      <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">AdminLTE.io</a>.</strong>
+      All rights reserved.
+      <div class="float-right d-none d-sm-inline-block">
+        <b>Version</b> 3.2.0
+      </div>
+    </footer>
+  </div>
+  <!-- ./wrapper -->
 
-<!-- PAGE PLUGINS -->
-<!-- jQuery Mapael -->
-<script src="../AdminLTE-3.2.0/plugins/jquery-mousewheel/jquery.mousewheel.js"></script>
-<script src="../AdminLTE-3.2.0/plugins/raphael/raphael.min.js"></script>
-<script src="../AdminLTE-3.2.0/plugins/jquery-mapael/jquery.mapael.min.js"></script>
-<script src="../AdminLTE-3.2.0/plugins/jquery-mapael/maps/usa_states.min.js"></script>
-<!-- ChartJS -->
-<script src="../AdminLTE-3.2.0/plugins/chart.js/Chart.min.js"></script>
+  <!-- REQUIRED SCRIPTS -->
+  <!-- jQuery -->
+  <script src="../AdminLTE-3.2.0/plugins/jquery/jquery.min.js"></script>
+  <!-- Bootstrap -->
+  <script src="../AdminLTE-3.2.0/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <!-- overlayScrollbars -->
+  <script src="../AdminLTE-3.2.0/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
+  <!-- AdminLTE App -->
+  <script src="../AdminLTE-3.2.0/dist/js/adminlte.js"></script>
 
-<!-- AdminLTE for demo purposes -->
-<script src="../AdminLTE-3.2.0/dist/js/demo.js"></script>
-<!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-<script src="../AdminLTE-3.2.0/dist/js/pages/dashboard2.js"></script>
+  <!-- PAGE PLUGINS -->
+  <!-- jQuery Mapael -->
+  <script src="../AdminLTE-3.2.0/plugins/jquery-mousewheel/jquery.mousewheel.js"></script>
+  <script src="../AdminLTE-3.2.0/plugins/raphael/raphael.min.js"></script>
+  <script src="../AdminLTE-3.2.0/plugins/jquery-mapael/jquery.mapael.min.js"></script>
+  <script src="../AdminLTE-3.2.0/plugins/jquery-mapael/maps/usa_states.min.js"></script>
+  <!-- ChartJS -->
+  <script src="../AdminLTE-3.2.0/plugins/chart.js/Chart.min.js"></script>
+
+  <!-- AdminLTE for demo purposes -->
+  <script src="../AdminLTE-3.2.0/dist/js/demo.js"></script>
+  <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+  <script src="../AdminLTE-3.2.0/dist/js/pages/dashboard2.js"></script>
 </body>
 
 </html>
