@@ -21,6 +21,7 @@
   <link rel="stylesheet" href="../AdminLTE-3.2.0/plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="../AdminLTE-3.2.0/dist/css/adminlte.min.css">
+  <script src="https://kit.fontawesome.com/dbbc84ce28.js" crossorigin="anonymous"></script>
 </head>
 
 <body class="hold-transition sidebar-mini layout-fixed">

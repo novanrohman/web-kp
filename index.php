@@ -62,9 +62,9 @@ $pendaftaran = query("SELECT * FROM pendaftaran_kp ORDER BY id DESC");
                                             <td scope="row"><?= $data['nama_dosen'] ?></td>
                                             <td scope="row"><?= $data['nama_perusahaan'] ?></td>
                                             <td scope="row">
-                                                <a href="detail.php?id=<?= $data['id']; ?>" class="btn btn-success btn-sm" style="font-weight: 600;"><i class="bi bi-pencil-square"></i>&nbsp;Ubah</a> |
-                                                <a href="change.php?id=<?= $data['id']; ?>" class="btn btn-warning btn-sm" style="font-weight: 600;"><i class="bi bi-pencil-square"></i>&nbsp;Ubah</a> |
-                                                <a href="del.php?id=<?= $data['id']; ?>" class="btn btn-danger btn-sm" style="font-weight: 600;" onclick="return confirm('Apakah anda yakin ingin menghapus data <?= $data['nama_anggota']; ?> ?');"><i class="bi bi-trash-fill"></i>&nbsp;Hapus</a>
+                                                <a href="detail.php?id=<?= $data['id']; ?>" class="btn btn-success btn-sm" style="font-weight: 600;"><i class="fa-solid fa-circle-info"></i>&nbsp;Detail</a>
+                                                <a href="change.php?id=<?= $data['id']; ?>" class="btn btn-warning btn-sm" style="font-weight: 600;"><i class="fa-solid fa-square-pen"></i></i>&nbsp;Change</a>
+                                                <a href="del.php?id=<?= $data['id']; ?>" class="btn btn-danger btn-sm" style="font-weight: 600;" onclick="return confirm('Apakah anda yakin ingin menghapus data <?= $data['nama_anggota']; ?> ?');"><i class="fa-solid fa-trash"></i>&nbsp;Delete</a>
                                             </td>
                                         </tr>
                                     <?php

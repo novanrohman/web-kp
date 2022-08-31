@@ -159,7 +159,7 @@
           <a href="kp.php?page=dashboard" class="nav-link">
             <i class="nav-icon fas fa-tachometer-alt"></i>
             <p>
-              Dashboard
+              Data Dosen
             </p>
           </a>
         </li>
@@ -183,6 +183,14 @@
             <i class="nav-icon fas fa-edit"></i>
             <p>
               Pendaftaran KP
+            </p>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="index.php?page=" class="nav-link">
+            <i class="nav-icon fas fa-edit"></i>
+            <p>
+              Surat Izin KP
             </p>
           </a>
         </li>

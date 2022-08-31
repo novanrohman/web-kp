@@ -5,4 +5,4 @@ $sql = $conn->query("SELECT * FROM pendaftaran_kp WHERE id='$id'");
 $result = $sql->fetch_assoc();
 ?>
 
-<embed src="filedocs/<?= $result['proposal']; ?>" type="application/pdf" width="100%" height="100%">
+<embed src="file/<?= $result['proposal']; ?>" type="application/pdf" width="100%" height="100%">
