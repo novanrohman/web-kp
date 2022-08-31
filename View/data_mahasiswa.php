@@ -1,8 +1,14 @@
 <!-- <?php
+        include('../connection/db.php');
 
-// Fetch all users data from database
-//$result = mysqli_query($conn, "SELECT * FROM mahasiswa ORDER BY id DESC");
-?> -->
+        //  query
+        $q1 = "SELECT * FROM mahasiswa JOIN anggota_kelompok ON mahasiswa.`anggota_kelompok_id`=anggota_kelompok.`id_anggota`
+JOIN pendaftaran_kp ON pendaftaran_kp.`anggota_kelompok`=anggota_kelompok.`id_anggota`";
+
+        $result = mysqli_query($conn, $q1);
+        // Fetch all users data from database
+        //$result = mysqli_query($conn, "SELECT * FROM mahasiswa ORDER BY id DESC");
+        ?> -->
 
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
@@ -30,8 +36,7 @@
 
                             <div class="card-tools">
                                 <div class="input-group input-group-sm" style="width: 150px;">
-                                    <input type="text" name="table_search" class="form-control float-right"
-                                        placeholder="Search">
+                                    <input type="text" name="table_search" class="form-control float-right" placeholder="Search">
 
                                     <div class="input-group-append">
                                         <button type="submit" class="btn btn-default">
@@ -57,28 +62,28 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <?php  
-    // while($user_data = mysqli_fetch_array($result)) {   
-      $no = 1;
-      foreach($db->tampil_data() as $user_data){
-              
-        echo "<tr>";
-        echo "<td>".$no++."</td>";
-        echo "<td>".$user_data['nama_mahasiswa']."</td>";
-        echo "<td>".$user_data['nim']."</td>";    
-        echo "<td>".$user_data['kelas']."</td>";    
-        echo "<td>".$user_data['alamat']."</td>";
-        echo "<td>".$user_data['email']."</td>";        
-        echo "<td>".$user_data['anggota_kelompok_id']."</td>";    
-        echo "<td><button type='button' class='btn btn-outline-primary'>
+                                    <?php
+                                    // while($user_data = mysqli_fetch_array($result)) {   
+                                    $no = 1;
+                                    foreach ($db->tampil_data() as $user_data) {
+
+                                        echo "<tr>";
+                                        echo "<td>" . $no++ . "</td>";
+                                        echo "<td>" . $user_data['nama_mahasiswa'] . "</td>";
+                                        echo "<td>" . $user_data['nim'] . "</td>";
+                                        echo "<td>" . $user_data['kelas'] . "</td>";
+                                        echo "<td>" . $user_data['alamat'] . "</td>";
+                                        echo "<td>" . $user_data['email'] . "</td>";
+                                        echo "<td>" . $user_data['anggota_kelompok_id'] . "</td>";
+                                        echo "<td><button type='button' class='btn btn-outline-primary'>
         <span class='material-symbols-outlined'>Edit</span>
       </button>  <button type='button' class='btn btn-outline-danger'>
       <span class='material-symbols-outlined'>delete</span>
     </button>
-  </td></tr>";        
-    }
-    // }
-    ?>
+  </td></tr>";
+                                    }
+                                    // }
+                                    ?>
 
 
                                     </tr>
